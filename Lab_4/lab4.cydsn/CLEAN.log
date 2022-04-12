@@ -1,0 +1,6 @@
+--------------- Clean Started: 11/08/2021 13:35:47 Project: lab4, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+Deleting file ".\lab4.cycdx"
+Deleting file ".\lab4.svd"
+Deleting file ".\lab4.rpt"
+Deleting file ".\lab4_timing.html"
+--------------- Clean Succeeded: 11/08/2021 13:35:47 ---------------

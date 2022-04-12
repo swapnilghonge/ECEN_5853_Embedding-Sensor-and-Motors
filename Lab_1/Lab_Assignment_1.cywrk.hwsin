@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Datasheet">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab_Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1\TopDesign</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\Pins</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\Analog</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\Clocks</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\Interrupts</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\DMA</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\System</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\Directives</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\Flash Security</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.cydwr\EEPROM</v>
+<v>Lab_Assignment_1\Assignment_1\Header Files</v>
+<v>Lab_Assignment_1\Assignment_1\Header Files\cyapicallbacks.h</v>
+<v>Lab_Assignment_1\Assignment_1\Source Files</v>
+<v>Lab_Assignment_1\Assignment_1\Source Files\main.c</v>
+<v>Lab_Assignment_1\Assignment_1\Generated_Source</v>
+<v>Lab_Assignment_1\Assignment_1\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab_Assignment_1">
+<ExpandedNodeIds>
+<v>Lab_Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1\TopDesign</v>
+<v>Lab_Assignment_1\Assignment_1\TopDesign\TopDesign.cysch</v>
+<v>Lab_Assignment_1\Assignment_1\TopDesign\TopDesign_01.cymacro</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab_Assignment_1">
+<ExpandedNodeIds>
+<v>Lab_Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_1.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P0_0.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P0_1.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_0.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_1.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_2.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_3.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_4.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Listing Files\Thermistor_1.lst</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Assignment_1.elf</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Assignment_1.hex</v>
+<v>Lab_Assignment_1\Assignment_1\CortexM3\ARM_GCC_541\Debug\Assignment_1.map</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.gpdsc</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1.rpt</v>
+<v>Lab_Assignment_1\Assignment_1\Assignment_1_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab_Assignment_1\Assignment_1">
+<ExpandedNodeIds>
+<v>Lab_Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1</v>
+<v>Lab_Assignment_1\Assignment_1\PSoC 5LP Architecture TRM</v>
+<v>Lab_Assignment_1\Assignment_1\CY8C58LP Family Datasheet</v>
+<v>Lab_Assignment_1\Assignment_1\System Reference Guides</v>
+<v>Lab_Assignment_1\Assignment_1\System Reference Guides\cy_boot_v6_0</v>
+<v>Lab_Assignment_1\Assignment_1\ADC_DelSig_v3_30.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\AMux_v1_80.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\CharLCD_v2_20.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\cy_pins_v2_20</v>
+<v>Lab_Assignment_1\Assignment_1\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\Gnd_v1_0.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\Power_v1_0.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\Resistor_v1_0.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\Thermistor_v1_0.pdf</v>
+<v>Lab_Assignment_1\Assignment_1\ThermistorCalc_v1_20.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Assignment_1.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Assignment_1.cydsn\main.c" />
+<name v=".\Assignment_1.cydsn\cyapicallbacks.h" />
+<name v=".\Assignment_1.cydsn\Assignment_1.cydwr" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1013, 411" SelectedTabbedMdiWindow="f003ed68-fa41-4963-a637-5839c020434d"><DocumentWindow Key="C:\Users\hwsin\Documents\PSoC Creator\Lab_Assignment_1\Assignment_1.cydsn\TopDesign\TopDesign.cysch" Guid="59dd2f08-c052-426a-8867-bfc8f1d071f3" /><DocumentWindow Key="C:\Users\hwsin\Documents\PSoC Creator\Lab_Assignment_1\Assignment_1.cydsn\main.c" Guid="f003ed68-fa41-4963-a637-5839c020434d" /><DocumentWindow Key="C:\Users\hwsin\Documents\PSoC Creator\Lab_Assignment_1\Assignment_1.cydsn\cyapicallbacks.h" Guid="75739ce8-5343-4aa8-9eed-cce26d60be04" /><DocumentWindow Key="C:\Users\hwsin\Documents\PSoC Creator\Lab_Assignment_1\Assignment_1.cydsn\Assignment_1.cydwr" Guid="f3b6927a-5afa-473e-b04e-3628e237d0be" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d046d55d-fcf2-4e89-9687-a8e9785ddad3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

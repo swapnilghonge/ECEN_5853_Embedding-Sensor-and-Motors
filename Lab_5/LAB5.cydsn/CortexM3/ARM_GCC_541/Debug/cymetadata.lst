@@ -1,0 +1,879 @@
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 372
+  28              	cy_meta_configecc:
+  29 0000 01       		.byte	1
+  30 0001 4F       		.byte	79
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 05       		.byte	5
+  34 0005 52       		.byte	82
+  35 0006 00       		.byte	0
+  36 0007 40       		.byte	64
+  37 0008 03       		.byte	3
+  38 0009 5A       		.byte	90
+  39 000a 00       		.byte	0
+  40 000b 40       		.byte	64
+  41 000c 01       		.byte	1
+  42 000d 07       		.byte	7
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 05       		.byte	5
+  46 0011 09       		.byte	9
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 0E       		.byte	14
+  50 0015 0A       		.byte	10
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 0E       		.byte	14
+  54 0019 0B       		.byte	11
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 02       		.byte	2
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 2
+
+
+  58 001d 17       		.byte	23
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 05       		.byte	5
+  62 0021 19       		.byte	25
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 02       		.byte	2
+  66 0025 1B       		.byte	27
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 02       		.byte	2
+  70 0029 40       		.byte	64
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 01       		.byte	1
+  74 002d 41       		.byte	65
+  75 002e 01       		.byte	1
+  76 002f 40       		.byte	64
+  77 0030 03       		.byte	3
+  78 0031 42       		.byte	66
+  79 0032 01       		.byte	1
+  80 0033 40       		.byte	64
+  81 0034 06       		.byte	6
+  82 0035 43       		.byte	67
+  83 0036 01       		.byte	1
+  84 0037 40       		.byte	64
+  85 0038 02       		.byte	2
+  86 0039 44       		.byte	68
+  87 003a 01       		.byte	1
+  88 003b 40       		.byte	64
+  89 003c 06       		.byte	6
+  90 003d 45       		.byte	69
+  91 003e 01       		.byte	1
+  92 003f 40       		.byte	64
+  93 0040 0D       		.byte	13
+  94 0041 46       		.byte	70
+  95 0042 01       		.byte	1
+  96 0043 40       		.byte	64
+  97 0044 0A       		.byte	10
+  98 0045 47       		.byte	71
+  99 0046 01       		.byte	1
+ 100 0047 40       		.byte	64
+ 101 0048 07       		.byte	7
+ 102 0049 48       		.byte	72
+ 103 004a 01       		.byte	1
+ 104 004b 40       		.byte	64
+ 105 004c 06       		.byte	6
+ 106 004d 4C       		.byte	76
+ 107 004e 01       		.byte	1
+ 108 004f 40       		.byte	64
+ 109 0050 07       		.byte	7
+ 110 0051 4D       		.byte	77
+ 111 0052 01       		.byte	1
+ 112 0053 40       		.byte	64
+ 113 0054 02       		.byte	2
+ 114 0055 50       		.byte	80
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 3
+
+
+ 115 0056 01       		.byte	1
+ 116 0057 40       		.byte	64
+ 117 0058 01       		.byte	1
+ 118 0059 51       		.byte	81
+ 119 005a 01       		.byte	1
+ 120 005b 40       		.byte	64
+ 121 005c 0A       		.byte	10
+ 122 005d 4B       		.byte	75
+ 123 005e 08       		.byte	8
+ 124 005f 10       		.byte	16
+ 125 0060 09       		.byte	9
+ 126 0061 10       		.byte	16
+ 127 0062 10       		.byte	16
+ 128 0063 80       		.byte	-128
+ 129 0064 60       		.byte	96
+ 130 0065 40       		.byte	64
+ 131 0066 61       		.byte	97
+ 132 0067 40       		.byte	64
+ 133 0068 2B       		.byte	43
+ 134 0069 04       		.byte	4
+ 135 006a 2C       		.byte	44
+ 136 006b 04       		.byte	4
+ 137 006c CF       		.byte	-49
+ 138 006d 04       		.byte	4
+ 139 006e EE       		.byte	-18
+ 140 006f 0C       		.byte	12
+ 141 0070 99       		.byte	-103
+ 142 0071 20       		.byte	32
+ 143 0072 9D       		.byte	-99
+ 144 0073 88       		.byte	-120
+ 145 0074 AF       		.byte	-81
+ 146 0075 01       		.byte	1
+ 147 0076 B1       		.byte	-79
+ 148 0077 20       		.byte	32
+ 149 0078 EE       		.byte	-18
+ 150 0079 04       		.byte	4
+ 151 007a 04       		.byte	4
+ 152 007b 0C       		.byte	12
+ 153 007c 06       		.byte	6
+ 154 007d 01       		.byte	1
+ 155 007e 08       		.byte	8
+ 156 007f 04       		.byte	4
+ 157 0080 0A       		.byte	10
+ 158 0081 02       		.byte	2
+ 159 0082 0E       		.byte	14
+ 160 0083 08       		.byte	8
+ 161 0084 2A       		.byte	42
+ 162 0085 03       		.byte	3
+ 163 0086 32       		.byte	50
+ 164 0087 03       		.byte	3
+ 165 0088 34       		.byte	52
+ 166 0089 04       		.byte	4
+ 167 008a 36       		.byte	54
+ 168 008b 08       		.byte	8
+ 169 008c 38       		.byte	56
+ 170 008d 22       		.byte	34
+ 171 008e 3E       		.byte	62
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 4
+
+
+ 172 008f 51       		.byte	81
+ 173 0090 58       		.byte	88
+ 174 0091 04       		.byte	4
+ 175 0092 5C       		.byte	92
+ 176 0093 01       		.byte	1
+ 177 0094 5F       		.byte	95
+ 178 0095 01       		.byte	1
+ 179 0096 00       		.byte	0
+ 180 0097 10       		.byte	16
+ 181 0098 01       		.byte	1
+ 182 0099 88       		.byte	-120
+ 183 009a 10       		.byte	16
+ 184 009b 04       		.byte	4
+ 185 009c 18       		.byte	24
+ 186 009d 10       		.byte	16
+ 187 009e 19       		.byte	25
+ 188 009f 20       		.byte	32
+ 189 00a0 1A       		.byte	26
+ 190 00a1 01       		.byte	1
+ 191 00a2 1B       		.byte	27
+ 192 00a3 01       		.byte	1
+ 193 00a4 86       		.byte	-122
+ 194 00a5 01       		.byte	1
+ 195 00a6 8C       		.byte	-116
+ 196 00a7 10       		.byte	16
+ 197 00a8 98       		.byte	-104
+ 198 00a9 04       		.byte	4
+ 199 00aa B0       		.byte	-80
+ 200 00ab 04       		.byte	4
+ 201 00ac C0       		.byte	-64
+ 202 00ad 07       		.byte	7
+ 203 00ae C4       		.byte	-60
+ 204 00af 02       		.byte	2
+ 205 00b0 E0       		.byte	-32
+ 206 00b1 08       		.byte	8
+ 207 00b2 E0       		.byte	-32
+ 208 00b3 04       		.byte	4
+ 209 00b4 EC       		.byte	-20
+ 210 00b5 44       		.byte	68
+ 211 00b6 81       		.byte	-127
+ 212 00b7 80       		.byte	-128
+ 213 00b8 99       		.byte	-103
+ 214 00b9 20       		.byte	32
+ 215 00ba 9D       		.byte	-99
+ 216 00bb 80       		.byte	-128
+ 217 00bc A9       		.byte	-87
+ 218 00bd 08       		.byte	8
+ 219 00be EC       		.byte	-20
+ 220 00bf 40       		.byte	64
+ 221 00c0 8D       		.byte	-115
+ 222 00c1 20       		.byte	32
+ 223 00c2 99       		.byte	-103
+ 224 00c3 20       		.byte	32
+ 225 00c4 33       		.byte	51
+ 226 00c5 20       		.byte	32
+ 227 00c6 CC       		.byte	-52
+ 228 00c7 10       		.byte	16
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 5
+
+
+ 229 00c8 A7       		.byte	-89
+ 230 00c9 20       		.byte	32
+ 231 00ca 63       		.byte	99
+ 232 00cb 02       		.byte	2
+ 233 00cc A7       		.byte	-89
+ 234 00cd 20       		.byte	32
+ 235 00ce D6       		.byte	-42
+ 236 00cf 40       		.byte	64
+ 237 00d0 19       		.byte	25
+ 238 00d1 01       		.byte	1
+ 239 00d2 1B       		.byte	27
+ 240 00d3 04       		.byte	4
+ 241 00d4 AB       		.byte	-85
+ 242 00d5 20       		.byte	32
+ 243 00d6 AF       		.byte	-81
+ 244 00d7 01       		.byte	1
+ 245 00d8 C6       		.byte	-58
+ 246 00d9 10       		.byte	16
+ 247 00da EE       		.byte	-18
+ 248 00db 30       		.byte	48
+ 249 00dc 73       		.byte	115
+ 250 00dd 10       		.byte	16
+ 251 00de DC       		.byte	-36
+ 252 00df 01       		.byte	1
+ 253 00e0 10       		.byte	16
+ 254 00e1 10       		.byte	16
+ 255 00e2 13       		.byte	19
+ 256 00e3 08       		.byte	8
+ 257 00e4 5F       		.byte	95
+ 258 00e5 02       		.byte	2
+ 259 00e6 97       		.byte	-105
+ 260 00e7 10       		.byte	16
+ 261 00e8 C4       		.byte	-60
+ 262 00e9 08       		.byte	8
+ 263 00ea D6       		.byte	-42
+ 264 00eb 01       		.byte	1
+ 265 00ec 1B       		.byte	27
+ 266 00ed 04       		.byte	4
+ 267 00ee 33       		.byte	51
+ 268 00ef 08       		.byte	8
+ 269 00f0 85       		.byte	-123
+ 270 00f1 01       		.byte	1
+ 271 00f2 87       		.byte	-121
+ 272 00f3 10       		.byte	16
+ 273 00f4 8F       		.byte	-113
+ 274 00f5 02       		.byte	2
+ 275 00f6 97       		.byte	-105
+ 276 00f7 10       		.byte	16
+ 277 00f8 98       		.byte	-104
+ 278 00f9 10       		.byte	16
+ 279 00fa 9F       		.byte	-97
+ 280 00fb 02       		.byte	2
+ 281 00fc B3       		.byte	-77
+ 282 00fd 08       		.byte	8
+ 283 00fe C6       		.byte	-58
+ 284 00ff 08       		.byte	8
+ 285 0100 CC       		.byte	-52
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 6
+
+
+ 286 0101 02       		.byte	2
+ 287 0102 E0       		.byte	-32
+ 288 0103 08       		.byte	8
+ 289 0104 EE       		.byte	-18
+ 290 0105 01       		.byte	1
+ 291 0106 3D       		.byte	61
+ 292 0107 01       		.byte	1
+ 293 0108 43       		.byte	67
+ 294 0109 08       		.byte	8
+ 295 010a 91       		.byte	-111
+ 296 010b 01       		.byte	1
+ 297 010c 98       		.byte	-104
+ 298 010d 10       		.byte	16
+ 299 010e A3       		.byte	-93
+ 300 010f 08       		.byte	8
+ 301 0110 AB       		.byte	-85
+ 302 0111 04       		.byte	4
+ 303 0112 B3       		.byte	-77
+ 304 0113 08       		.byte	8
+ 305 0114 CE       		.byte	-50
+ 306 0115 01       		.byte	1
+ 307 0116 D0       		.byte	-48
+ 308 0117 02       		.byte	2
+ 309 0118 E8       		.byte	-24
+ 310 0119 04       		.byte	4
+ 311 011a 27       		.byte	39
+ 312 011b 08       		.byte	8
+ 313 011c 83       		.byte	-125
+ 314 011d 08       		.byte	8
+ 315 011e AB       		.byte	-85
+ 316 011f 04       		.byte	4
+ 317 0120 B5       		.byte	-75
+ 318 0121 01       		.byte	1
+ 319 0122 C8       		.byte	-56
+ 320 0123 20       		.byte	32
+ 321 0124 E0       		.byte	-32
+ 322 0125 20       		.byte	32
+ 323 0126 EC       		.byte	-20
+ 324 0127 20       		.byte	32
+ 325 0128 64       		.byte	100
+ 326 0129 10       		.byte	16
+ 327 012a 98       		.byte	-104
+ 328 012b 10       		.byte	16
+ 329 012c A0       		.byte	-96
+ 330 012d 02       		.byte	2
+ 331 012e B4       		.byte	-76
+ 332 012f 02       		.byte	2
+ 333 0130 D8       		.byte	-40
+ 334 0131 01       		.byte	1
+ 335 0132 EC       		.byte	-20
+ 336 0133 02       		.byte	2
+ 337 0134 52       		.byte	82
+ 338 0135 20       		.byte	32
+ 339 0136 74       		.byte	116
+ 340 0137 02       		.byte	2
+ 341 0138 8E       		.byte	-114
+ 342 0139 20       		.byte	32
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 7
+
+
+ 343 013a A0       		.byte	-96
+ 344 013b 02       		.byte	2
+ 345 013c D4       		.byte	-44
+ 346 013d 04       		.byte	4
+ 347 013e DE       		.byte	-34
+ 348 013f 04       		.byte	4
+ 349 0140 E0       		.byte	-32
+ 350 0141 08       		.byte	8
+ 351 0142 00       		.byte	0
+ 352 0143 02       		.byte	2
+ 353 0144 0C       		.byte	12
+ 354 0145 02       		.byte	2
+ 355 0146 00       		.byte	0
+ 356 0147 03       		.byte	3
+ 357 0148 00       		.byte	0
+ 358 0149 60       		.byte	96
+ 359 014a 60       		.byte	96
+ 360 014b 00       		.byte	0
+ 361 014c 60       		.byte	96
+ 362 014d 00       		.byte	0
+ 363 014e 00       		.byte	0
+ 364 014f 00       		.byte	0
+ 365 0150 00       		.byte	0
+ 366 0151 1B       		.byte	27
+ 367 0152 1B       		.byte	27
+ 368 0153 00       		.byte	0
+ 369 0154 10       		.byte	16
+ 370 0155 00       		.byte	0
+ 371 0156 00       		.byte	0
+ 372 0157 00       		.byte	0
+ 373 0158 00       		.byte	0
+ 374 0159 FF       		.byte	-1
+ 375 015a FF       		.byte	-1
+ 376 015b 00       		.byte	0
+ 377 015c 80       		.byte	-128
+ 378 015d 00       		.byte	0
+ 379 015e 00       		.byte	0
+ 380 015f 00       		.byte	0
+ 381 0160 00       		.byte	0
+ 382 0161 00       		.byte	0
+ 383 0162 00       		.byte	0
+ 384 0163 00       		.byte	0
+ 385 0164 00       		.byte	0
+ 386 0165 00       		.byte	0
+ 387 0166 A3       		.byte	-93
+ 388 0167 00       		.byte	0
+ 389 0168 00       		.byte	0
+ 390 0169 02       		.byte	2
+ 391 016a 02       		.byte	2
+ 392 016b 00       		.byte	0
+ 393 016c 02       		.byte	2
+ 394 016d 00       		.byte	0
+ 395 016e 00       		.byte	0
+ 396 016f 00       		.byte	0
+ 397 0170 13       		.byte	19
+ 398 0171 00       		.byte	0
+ 399 0172 18       		.byte	24
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 8
+
+
+ 400 0173 01       		.byte	1
+ 401              		.section	.cywolatch,"a",%progbits
+ 402              		.align	2
+ 403              		.type	cy_meta_wonvl, %object
+ 404              		.size	cy_meta_wonvl, 4
+ 405              	cy_meta_wonvl:
+ 406 0000 BC       		.byte	-68
+ 407 0001 90       		.byte	-112
+ 408 0002 AC       		.byte	-84
+ 409 0003 AF       		.byte	-81
+ 410              		.section	.cycustnvl,"a",%progbits
+ 411              		.align	2
+ 412              		.type	cy_meta_custnvl, %object
+ 413              		.size	cy_meta_custnvl, 4
+ 414              	cy_meta_custnvl:
+ 415 0000 00       		.byte	0
+ 416 0001 00       		.byte	0
+ 417 0002 40       		.byte	64
+ 418 0003 05       		.byte	5
+ 419              		.section	.cymeta,"a",%progbits
+ 420              		.align	2
+ 421              		.type	cy_metadata, %object
+ 422              		.size	cy_metadata, 12
+ 423              	cy_metadata:
+ 424 0000 00       		.byte	0
+ 425 0001 01       		.byte	1
+ 426 0002 2E       		.byte	46
+ 427 0003 12       		.byte	18
+ 428 0004 30       		.byte	48
+ 429 0005 69       		.byte	105
+ 430 0006 00       		.byte	0
+ 431 0007 01       		.byte	1
+ 432 0008 00       		.byte	0
+ 433 0009 00       		.byte	0
+ 434 000a 00       		.byte	0
+ 435 000b 00       		.byte	0
+ 436              		.section	.cyflashprotect,"a",%progbits
+ 437              		.align	2
+ 438              		.type	cy_meta_flashprotect, %object
+ 439              		.size	cy_meta_flashprotect, 256
+ 440              	cy_meta_flashprotect:
+ 441 0000 00000000 		.space	256
+ 441      00000000 
+ 441      00000000 
+ 441      00000000 
+ 441      00000000 
+ 442              		.text
+ 443              	.Letext0:
+ 444              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 445              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 446              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 447              		.section	.debug_info,"",%progbits
+ 448              	.Ldebug_info0:
+ 449 0000 31010000 		.4byte	0x131
+ 450 0004 0400     		.2byte	0x4
+ 451 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 452 000a 04       		.byte	0x4
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 9
+
+
+ 453 000b 01       		.uleb128 0x1
+ 454 000c 63000000 		.4byte	.LASF17
+ 455 0010 0C       		.byte	0xc
+ 456 0011 BD010000 		.4byte	.LASF18
+ 457 0015 0A000000 		.4byte	.LASF19
+ 458 0019 00000000 		.4byte	.Ldebug_line0
+ 459 001d 02       		.uleb128 0x2
+ 460 001e 01       		.byte	0x1
+ 461 001f 06       		.byte	0x6
+ 462 0020 B1010000 		.4byte	.LASF0
+ 463 0024 03       		.uleb128 0x3
+ 464 0025 00000000 		.4byte	.LASF9
+ 465 0029 01       		.byte	0x1
+ 466 002a 1D       		.byte	0x1d
+ 467 002b 2F000000 		.4byte	0x2f
+ 468 002f 02       		.uleb128 0x2
+ 469 0030 01       		.byte	0x1
+ 470 0031 08       		.byte	0x8
+ 471 0032 55000000 		.4byte	.LASF1
+ 472 0036 02       		.uleb128 0x2
+ 473 0037 02       		.byte	0x2
+ 474 0038 05       		.byte	0x5
+ 475 0039 9E010000 		.4byte	.LASF2
+ 476 003d 02       		.uleb128 0x2
+ 477 003e 02       		.byte	0x2
+ 478 003f 07       		.byte	0x7
+ 479 0040 03010000 		.4byte	.LASF3
+ 480 0044 02       		.uleb128 0x2
+ 481 0045 04       		.byte	0x4
+ 482 0046 05       		.byte	0x5
+ 483 0047 A8010000 		.4byte	.LASF4
+ 484 004b 02       		.uleb128 0x2
+ 485 004c 04       		.byte	0x4
+ 486 004d 07       		.byte	0x7
+ 487 004e F1000000 		.4byte	.LASF5
+ 488 0052 02       		.uleb128 0x2
+ 489 0053 08       		.byte	0x8
+ 490 0054 05       		.byte	0x5
+ 491 0055 90010000 		.4byte	.LASF6
+ 492 0059 02       		.uleb128 0x2
+ 493 005a 08       		.byte	0x8
+ 494 005b 07       		.byte	0x7
+ 495 005c 45010000 		.4byte	.LASF7
+ 496 0060 04       		.uleb128 0x4
+ 497 0061 04       		.byte	0x4
+ 498 0062 05       		.byte	0x5
+ 499 0063 696E7400 		.ascii	"int\000"
+ 500 0067 02       		.uleb128 0x2
+ 501 0068 04       		.byte	0x4
+ 502 0069 07       		.byte	0x7
+ 503 006a 38010000 		.4byte	.LASF8
+ 504 006e 03       		.uleb128 0x3
+ 505 006f 5C010000 		.4byte	.LASF10
+ 506 0073 02       		.byte	0x2
+ 507 0074 18       		.byte	0x18
+ 508 0075 24000000 		.4byte	0x24
+ 509 0079 05       		.uleb128 0x5
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 10
+
+
+ 510 007a 91000000 		.4byte	0x91
+ 511 007e 8A000000 		.4byte	0x8a
+ 512 0082 06       		.uleb128 0x6
+ 513 0083 8A000000 		.4byte	0x8a
+ 514 0087 7301     		.2byte	0x173
+ 515 0089 00       		.byte	0
+ 516 008a 02       		.uleb128 0x2
+ 517 008b 04       		.byte	0x4
+ 518 008c 07       		.byte	0x7
+ 519 008d 87010000 		.4byte	.LASF11
+ 520 0091 07       		.uleb128 0x7
+ 521 0092 6E000000 		.4byte	0x6e
+ 522 0096 08       		.uleb128 0x8
+ 523 0097 26010000 		.4byte	.LASF12
+ 524 009b 03       		.byte	0x3
+ 525 009c 1F       		.byte	0x1f
+ 526 009d A7000000 		.4byte	0xa7
+ 527 00a1 05       		.uleb128 0x5
+ 528 00a2 03       		.byte	0x3
+ 529 00a3 00000000 		.4byte	cy_meta_configecc
+ 530 00a7 07       		.uleb128 0x7
+ 531 00a8 79000000 		.4byte	0x79
+ 532 00ac 05       		.uleb128 0x5
+ 533 00ad 91000000 		.4byte	0x91
+ 534 00b1 BC000000 		.4byte	0xbc
+ 535 00b5 09       		.uleb128 0x9
+ 536 00b6 8A000000 		.4byte	0x8a
+ 537 00ba 03       		.byte	0x3
+ 538 00bb 00       		.byte	0
+ 539 00bc 08       		.uleb128 0x8
+ 540 00bd 16010000 		.4byte	.LASF13
+ 541 00c1 03       		.byte	0x3
+ 542 00c2 5B       		.byte	0x5b
+ 543 00c3 CD000000 		.4byte	0xcd
+ 544 00c7 05       		.uleb128 0x5
+ 545 00c8 03       		.byte	0x3
+ 546 00c9 00000000 		.4byte	cy_meta_custnvl
+ 547 00cd 07       		.uleb128 0x7
+ 548 00ce AC000000 		.4byte	0xac
+ 549 00d2 08       		.uleb128 0x8
+ 550 00d3 79010000 		.4byte	.LASF14
+ 551 00d7 03       		.byte	0x3
+ 552 00d8 69       		.byte	0x69
+ 553 00d9 E3000000 		.4byte	0xe3
+ 554 00dd 05       		.uleb128 0x5
+ 555 00de 03       		.byte	0x3
+ 556 00df 00000000 		.4byte	cy_meta_wonvl
+ 557 00e3 07       		.uleb128 0x7
+ 558 00e4 AC000000 		.4byte	0xac
+ 559 00e8 05       		.uleb128 0x5
+ 560 00e9 91000000 		.4byte	0x91
+ 561 00ed F8000000 		.4byte	0xf8
+ 562 00f1 09       		.uleb128 0x9
+ 563 00f2 8A000000 		.4byte	0x8a
+ 564 00f6 FF       		.byte	0xff
+ 565 00f7 00       		.byte	0
+ 566 00f8 08       		.uleb128 0x8
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 11
+
+
+ 567 00f9 64010000 		.4byte	.LASF15
+ 568 00fd 03       		.byte	0x3
+ 569 00fe 77       		.byte	0x77
+ 570 00ff 09010000 		.4byte	0x109
+ 571 0103 05       		.uleb128 0x5
+ 572 0104 03       		.byte	0x3
+ 573 0105 00000000 		.4byte	cy_meta_flashprotect
+ 574 0109 07       		.uleb128 0x7
+ 575 010a E8000000 		.4byte	0xe8
+ 576 010e 05       		.uleb128 0x5
+ 577 010f 91000000 		.4byte	0x91
+ 578 0113 1E010000 		.4byte	0x11e
+ 579 0117 09       		.uleb128 0x9
+ 580 0118 8A000000 		.4byte	0x8a
+ 581 011c 0B       		.byte	0xb
+ 582 011d 00       		.byte	0
+ 583 011e 08       		.uleb128 0x8
+ 584 011f 49000000 		.4byte	.LASF16
+ 585 0123 03       		.byte	0x3
+ 586 0124 A4       		.byte	0xa4
+ 587 0125 2F010000 		.4byte	0x12f
+ 588 0129 05       		.uleb128 0x5
+ 589 012a 03       		.byte	0x3
+ 590 012b 00000000 		.4byte	cy_metadata
+ 591 012f 07       		.uleb128 0x7
+ 592 0130 0E010000 		.4byte	0x10e
+ 593 0134 00       		.byte	0
+ 594              		.section	.debug_abbrev,"",%progbits
+ 595              	.Ldebug_abbrev0:
+ 596 0000 01       		.uleb128 0x1
+ 597 0001 11       		.uleb128 0x11
+ 598 0002 01       		.byte	0x1
+ 599 0003 25       		.uleb128 0x25
+ 600 0004 0E       		.uleb128 0xe
+ 601 0005 13       		.uleb128 0x13
+ 602 0006 0B       		.uleb128 0xb
+ 603 0007 03       		.uleb128 0x3
+ 604 0008 0E       		.uleb128 0xe
+ 605 0009 1B       		.uleb128 0x1b
+ 606 000a 0E       		.uleb128 0xe
+ 607 000b 10       		.uleb128 0x10
+ 608 000c 17       		.uleb128 0x17
+ 609 000d 00       		.byte	0
+ 610 000e 00       		.byte	0
+ 611 000f 02       		.uleb128 0x2
+ 612 0010 24       		.uleb128 0x24
+ 613 0011 00       		.byte	0
+ 614 0012 0B       		.uleb128 0xb
+ 615 0013 0B       		.uleb128 0xb
+ 616 0014 3E       		.uleb128 0x3e
+ 617 0015 0B       		.uleb128 0xb
+ 618 0016 03       		.uleb128 0x3
+ 619 0017 0E       		.uleb128 0xe
+ 620 0018 00       		.byte	0
+ 621 0019 00       		.byte	0
+ 622 001a 03       		.uleb128 0x3
+ 623 001b 16       		.uleb128 0x16
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 12
+
+
+ 624 001c 00       		.byte	0
+ 625 001d 03       		.uleb128 0x3
+ 626 001e 0E       		.uleb128 0xe
+ 627 001f 3A       		.uleb128 0x3a
+ 628 0020 0B       		.uleb128 0xb
+ 629 0021 3B       		.uleb128 0x3b
+ 630 0022 0B       		.uleb128 0xb
+ 631 0023 49       		.uleb128 0x49
+ 632 0024 13       		.uleb128 0x13
+ 633 0025 00       		.byte	0
+ 634 0026 00       		.byte	0
+ 635 0027 04       		.uleb128 0x4
+ 636 0028 24       		.uleb128 0x24
+ 637 0029 00       		.byte	0
+ 638 002a 0B       		.uleb128 0xb
+ 639 002b 0B       		.uleb128 0xb
+ 640 002c 3E       		.uleb128 0x3e
+ 641 002d 0B       		.uleb128 0xb
+ 642 002e 03       		.uleb128 0x3
+ 643 002f 08       		.uleb128 0x8
+ 644 0030 00       		.byte	0
+ 645 0031 00       		.byte	0
+ 646 0032 05       		.uleb128 0x5
+ 647 0033 01       		.uleb128 0x1
+ 648 0034 01       		.byte	0x1
+ 649 0035 49       		.uleb128 0x49
+ 650 0036 13       		.uleb128 0x13
+ 651 0037 01       		.uleb128 0x1
+ 652 0038 13       		.uleb128 0x13
+ 653 0039 00       		.byte	0
+ 654 003a 00       		.byte	0
+ 655 003b 06       		.uleb128 0x6
+ 656 003c 21       		.uleb128 0x21
+ 657 003d 00       		.byte	0
+ 658 003e 49       		.uleb128 0x49
+ 659 003f 13       		.uleb128 0x13
+ 660 0040 2F       		.uleb128 0x2f
+ 661 0041 05       		.uleb128 0x5
+ 662 0042 00       		.byte	0
+ 663 0043 00       		.byte	0
+ 664 0044 07       		.uleb128 0x7
+ 665 0045 26       		.uleb128 0x26
+ 666 0046 00       		.byte	0
+ 667 0047 49       		.uleb128 0x49
+ 668 0048 13       		.uleb128 0x13
+ 669 0049 00       		.byte	0
+ 670 004a 00       		.byte	0
+ 671 004b 08       		.uleb128 0x8
+ 672 004c 34       		.uleb128 0x34
+ 673 004d 00       		.byte	0
+ 674 004e 03       		.uleb128 0x3
+ 675 004f 0E       		.uleb128 0xe
+ 676 0050 3A       		.uleb128 0x3a
+ 677 0051 0B       		.uleb128 0xb
+ 678 0052 3B       		.uleb128 0x3b
+ 679 0053 0B       		.uleb128 0xb
+ 680 0054 49       		.uleb128 0x49
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 13
+
+
+ 681 0055 13       		.uleb128 0x13
+ 682 0056 3F       		.uleb128 0x3f
+ 683 0057 19       		.uleb128 0x19
+ 684 0058 02       		.uleb128 0x2
+ 685 0059 18       		.uleb128 0x18
+ 686 005a 00       		.byte	0
+ 687 005b 00       		.byte	0
+ 688 005c 09       		.uleb128 0x9
+ 689 005d 21       		.uleb128 0x21
+ 690 005e 00       		.byte	0
+ 691 005f 49       		.uleb128 0x49
+ 692 0060 13       		.uleb128 0x13
+ 693 0061 2F       		.uleb128 0x2f
+ 694 0062 0B       		.uleb128 0xb
+ 695 0063 00       		.byte	0
+ 696 0064 00       		.byte	0
+ 697 0065 00       		.byte	0
+ 698              		.section	.debug_aranges,"",%progbits
+ 699 0000 14000000 		.4byte	0x14
+ 700 0004 0200     		.2byte	0x2
+ 701 0006 00000000 		.4byte	.Ldebug_info0
+ 702 000a 04       		.byte	0x4
+ 703 000b 00       		.byte	0
+ 704 000c 0000     		.2byte	0
+ 705 000e 0000     		.2byte	0
+ 706 0010 00000000 		.4byte	0
+ 707 0014 00000000 		.4byte	0
+ 708              		.section	.debug_line,"",%progbits
+ 709              	.Ldebug_line0:
+ 710 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 710      02003701 
+ 710      00000201 
+ 710      FB0E0D00 
+ 710      01010101 
+ 711              	.LASF9:
+ 712 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 712      6E74385F 
+ 712      7400
+ 713              	.LASF19:
+ 714 000a 433A5C55 		.ascii	"C:\\Users\\SWAPNIL\\Documents\\PSoC Creator\\Worksp"
+ 714      73657273 
+ 714      5C535741 
+ 714      504E494C 
+ 714      5C446F63 
+ 715 0038 61636530 		.ascii	"ace03\\LAB5.cydsn\000"
+ 715      335C4C41 
+ 715      42352E63 
+ 715      7964736E 
+ 715      00
+ 716              	.LASF16:
+ 717 0049 63795F6D 		.ascii	"cy_metadata\000"
+ 717      65746164 
+ 717      61746100 
+ 718              	.LASF1:
+ 719 0055 756E7369 		.ascii	"unsigned char\000"
+ 719      676E6564 
+ 719      20636861 
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 14
+
+
+ 719      7200
+ 720              	.LASF17:
+ 721 0063 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 721      43313120 
+ 721      352E342E 
+ 721      31203230 
+ 721      31363036 
+ 722 0096 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 722      20726576 
+ 722      6973696F 
+ 722      6E203233 
+ 722      37373135 
+ 723 00c9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 723      66756E63 
+ 723      74696F6E 
+ 723      2D736563 
+ 723      74696F6E 
+ 724              	.LASF5:
+ 725 00f1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 725      20756E73 
+ 725      69676E65 
+ 725      6420696E 
+ 725      7400
+ 726              	.LASF3:
+ 727 0103 73686F72 		.ascii	"short unsigned int\000"
+ 727      7420756E 
+ 727      7369676E 
+ 727      65642069 
+ 727      6E7400
+ 728              	.LASF13:
+ 729 0116 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 729      6574615F 
+ 729      63757374 
+ 729      6E766C00 
+ 730              	.LASF12:
+ 731 0126 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 731      6574615F 
+ 731      636F6E66 
+ 731      69676563 
+ 731      6300
+ 732              	.LASF8:
+ 733 0138 756E7369 		.ascii	"unsigned int\000"
+ 733      676E6564 
+ 733      20696E74 
+ 733      00
+ 734              	.LASF7:
+ 735 0145 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 735      206C6F6E 
+ 735      6720756E 
+ 735      7369676E 
+ 735      65642069 
+ 736              	.LASF10:
+ 737 015c 75696E74 		.ascii	"uint8_t\000"
+ 737      385F7400 
+ 738              	.LASF15:
+ 739 0164 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 739      6574615F 
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccSmTaaM.s 			page 15
+
+
+ 739      666C6173 
+ 739      6870726F 
+ 739      74656374 
+ 740              	.LASF14:
+ 741 0179 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 741      6574615F 
+ 741      776F6E76 
+ 741      6C00
+ 742              	.LASF11:
+ 743 0187 73697A65 		.ascii	"sizetype\000"
+ 743      74797065 
+ 743      00
+ 744              	.LASF6:
+ 745 0190 6C6F6E67 		.ascii	"long long int\000"
+ 745      206C6F6E 
+ 745      6720696E 
+ 745      7400
+ 746              	.LASF2:
+ 747 019e 73686F72 		.ascii	"short int\000"
+ 747      7420696E 
+ 747      7400
+ 748              	.LASF4:
+ 749 01a8 6C6F6E67 		.ascii	"long int\000"
+ 749      20696E74 
+ 749      00
+ 750              	.LASF0:
+ 751 01b1 7369676E 		.ascii	"signed char\000"
+ 751      65642063 
+ 751      68617200 
+ 752              	.LASF18:
+ 753 01bd 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 753      72617465 
+ 753      645F536F 
+ 753      75726365 
+ 753      5C50536F 
+ 754              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

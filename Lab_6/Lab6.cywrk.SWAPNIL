@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lab6\Lab6\TopDesign">
+<ExpandedNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\TopDesign</v>
+<v>Lab6\Lab6\Lab6.cydwr</v>
+<v>Lab6\Lab6\Lab6.cydwr\Pins</v>
+<v>Lab6\Lab6\Lab6.cydwr\Analog</v>
+<v>Lab6\Lab6\Lab6.cydwr\Clocks</v>
+<v>Lab6\Lab6\Lab6.cydwr\Interrupts</v>
+<v>Lab6\Lab6\Lab6.cydwr\DMA</v>
+<v>Lab6\Lab6\Lab6.cydwr\System</v>
+<v>Lab6\Lab6\Lab6.cydwr\Directives</v>
+<v>Lab6\Lab6\Lab6.cydwr\Flash Security</v>
+<v>Lab6\Lab6\Lab6.cydwr\EEPROM</v>
+<v>Lab6\Lab6\Header Files</v>
+<v>Lab6\Lab6\Header Files\cyapicallbacks.h</v>
+<v>Lab6\Lab6\Source Files</v>
+<v>Lab6\Lab6\Source Files\main.c</v>
+<v>Lab6\Lab6\Generated_Source</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\TopDesign</v>
+<v>Lab6\Lab6\Lab6.cydwr</v>
+<v>Lab6\Lab6\Lab6.cydwr\Pins</v>
+<v>Lab6\Lab6\Lab6.cydwr\Analog</v>
+<v>Lab6\Lab6\Lab6.cydwr\Clocks</v>
+<v>Lab6\Lab6\Lab6.cydwr\Interrupts</v>
+<v>Lab6\Lab6\Lab6.cydwr\DMA</v>
+<v>Lab6\Lab6\Lab6.cydwr\System</v>
+<v>Lab6\Lab6\Lab6.cydwr\Directives</v>
+<v>Lab6\Lab6\Lab6.cydwr\Flash Security</v>
+<v>Lab6\Lab6\Lab6.cydwr\EEPROM</v>
+<v>Lab6\Lab6\Header Files</v>
+<v>Lab6\Lab6\Header Files\cyapicallbacks.h</v>
+<v>Lab6\Lab6\Source Files</v>
+<v>Lab6\Lab6\Source Files\main.c</v>
+<v>Lab6\Lab6\Generated_Source</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\ADC</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\ADC_IRQ</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\ADC_theACLK</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\cy_boot</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\DAC_1</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\DAC_2</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\DAC_3</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\Opamp_1</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\Opamp_2</v>
+<v>Lab6\Lab6\Generated_Source\PSoC5\Opamp_3</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\TopDesign</v>
+<v>Lab6\Lab6\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\TopDesign</v>
+<v>Lab6\Lab6\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\CortexM3</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_theACLK.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_1.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_1_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_2.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_2_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_3.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_3_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_1.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_1_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_2.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_2_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_3.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_3_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_4.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_4_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P0_0.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P0_1.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P2_0.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P2_1.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_0.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_6.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\P3_7.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_12_0.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Lab6.elf</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Lab6.hex</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Lab6.map</v>
+<v>Lab6\Lab6\Lab6.gpdsc</v>
+<v>Lab6\Lab6\Lab6.rpt</v>
+<v>Lab6\Lab6\Lab6_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\CortexM3</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_theACLK.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_1.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_1_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_2.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_2_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_3.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC_3_PM.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lab6\Lab6\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_1.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\PSoC 5LP Architecture TRM</v>
+<v>Lab6\Lab6\CY8C58LP Family Datasheet</v>
+<v>Lab6\Lab6\System Reference Guides</v>
+<v>Lab6\Lab6\System Reference Guides\cy_boot_v6_0</v>
+<v>Lab6\Lab6\ADC_SAR_v3_10.pdf</v>
+<v>Lab6\Lab6\Capacitor_v1_0.pdf</v>
+<v>Lab6\Lab6\cy_pins_v2_20</v>
+<v>Lab6\Lab6\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab6\Lab6\Gnd_v1_0.pdf</v>
+<v>Lab6\Lab6\Inductor_v1_0.pdf</v>
+<v>Lab6\Lab6\OpAmp_v1_90</v>
+<v>Lab6\Lab6\OpAmp_v1_90\OpAmp_v1_90.pdf</v>
+<v>Lab6\Lab6\Resistor_v1_0.pdf</v>
+<v>Lab6\Lab6\VDAC8_v1_90</v>
+<v>Lab6\Lab6\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Lab6</v>
+<v>Lab6\Lab6</v>
+<v>Lab6\Lab6\PSoC 5LP Architecture TRM</v>
+<v>Lab6\Lab6\CY8C58LP Family Datasheet</v>
+<v>Lab6\Lab6\System Reference Guides</v>
+<v>Lab6\Lab6\System Reference Guides\cy_boot_v6_0</v>
+<v>Lab6\Lab6\ADC_SAR_v3_10.pdf</v>
+<v>Lab6\Lab6\Capacitor_v1_0.pdf</v>
+<v>Lab6\Lab6\cy_pins_v2_20</v>
+<v>Lab6\Lab6\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Lab6\Lab6\Gnd_v1_0.pdf</v>
+<v>Lab6\Lab6\Inductor_v1_0.pdf</v>
+<v>Lab6\Lab6\OpAmp_v1_90</v>
+<v>Lab6\Lab6\OpAmp_v1_90\OpAmp_v1_90.pdf</v>
+<v>Lab6\Lab6\Resistor_v1_0.pdf</v>
+<v>Lab6\Lab6\VDAC8_v1_90</v>
+<v>Lab6\Lab6\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Lab6.cydsn\main.c" />
+<name v=".\Lab6.cydsn\Lab6.cydwr" />
+<name v=".\Lab6.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1104, 562" SelectedTabbedMdiWindow="c2c3aec7-11d4-4520-80ad-afdc599ec930"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="7d706250-768d-4201-97c9-35873774b66c" /><DocumentWindow Key="C:\Users\SWAPNIL\Documents\PSoC Creator\Lab6\Lab6.cydsn\main.c" Guid="c2c3aec7-11d4-4520-80ad-afdc599ec930" /><DocumentWindow Key="C:\Users\SWAPNIL\Documents\PSoC Creator\Lab6\Lab6.cydsn\Lab6.cydwr" Guid="012cc1aa-162d-41e9-8389-2e66bfbf3d9a" /><DocumentWindow Key="C:\Users\SWAPNIL\Documents\PSoC Creator\Lab6\Lab6.cydsn\TopDesign\TopDesign.cysch" Guid="7a7ef4f2-8051-40d7-9806-ca6c3bc3aeca" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

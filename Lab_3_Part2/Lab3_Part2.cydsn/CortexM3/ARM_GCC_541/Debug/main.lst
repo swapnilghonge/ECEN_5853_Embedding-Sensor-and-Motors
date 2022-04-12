@@ -1,0 +1,1435 @@
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_dmul
+  21              		.global	__aeabi_d2iz
+  22              		.section	.text.main,"ax",%progbits
+  23              		.align	2
+  24              		.global	main
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	main, %function
+  28              	main:
+  29              	.LFB63:
+  30              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** #include "project.h" 
+  14:main.c        **** #include "math.h" 
+  15:main.c        **** #include "float.h" 
+  16:main.c        **** 
+  17:main.c        **** // global variable declaration
+  18:main.c        **** 
+  19:main.c        **** int LastState=0, State, State, count, soft_count = 0;
+  20:main.c        **** 
+  21:main.c        **** 
+  22:main.c        **** int main(void)
+  23:main.c        **** {
+  31              		.loc 1 23 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 2
+
+
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  24:main.c        ****     CyGlobalIntEnable; // Enable Global interrupts
+  39              		.loc 1 24 0
+  40              		.syntax unified
+  41              	@ 24 "main.c" 1
+  42 0002 62B6     		CPSIE   i
+  43              	@ 0 "" 2
+  25:main.c        ****     
+  26:main.c        **** 
+  27:main.c        ****     QuadDec_2_Start();
+  44              		.loc 1 27 0
+  45              		.thumb
+  46              		.syntax unified
+  47 0004 FFF7FEFF 		bl	QuadDec_2_Start
+  48              	.LVL0:
+  28:main.c        ****     Clock_2_Start();
+  49              		.loc 1 28 0
+  50 0008 FFF7FEFF 		bl	Clock_2_Start
+  51              	.LVL1:
+  29:main.c        ****     LCD_Char_2_Start();
+  52              		.loc 1 29 0
+  53 000c FFF7FEFF 		bl	LCD_Char_2_Start
+  54              	.LVL2:
+  30:main.c        ****     LCD_Char_2_Position(0,0);
+  55              		.loc 1 30 0
+  56 0010 0021     		movs	r1, #0
+  57 0012 0846     		mov	r0, r1
+  58 0014 FFF7FEFF 		bl	LCD_Char_2_Position
+  59              	.LVL3:
+  31:main.c        ****     LCD_Char_2_PrintString("Encoder");
+  60              		.loc 1 31 0
+  61 0018 3E48     		ldr	r0, .L9
+  62 001a FFF7FEFF 		bl	LCD_Char_2_PrintString
+  63              	.LVL4:
+  32:main.c        ****     LCD_Char_2_Position(0,0);
+  64              		.loc 1 32 0
+  65 001e 0021     		movs	r1, #0
+  66 0020 0846     		mov	r0, r1
+  67 0022 FFF7FEFF 		bl	LCD_Char_2_Position
+  68              	.LVL5:
+  33:main.c        ****     CyDelay(2000);
+  69              		.loc 1 33 0
+  70 0026 4FF4FA60 		mov	r0, #2000
+  71 002a FFF7FEFF 		bl	CyDelay
+  72              	.LVL6:
+  34:main.c        ****     LCD_Char_2_ClearDisplay();
+  73              		.loc 1 34 0
+  74 002e 0120     		movs	r0, #1
+  75 0030 FFF7FEFF 		bl	LCD_Char_2_WriteControl
+  76              	.LVL7:
+  77              	.L2:
+  78              	.LBB2:
+  35:main.c        ****     
+  36:main.c        ****     while(1)
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 3
+
+
+  37:main.c        ****     {   
+  38:main.c        ****         count = QuadDec_2_GetCounter();
+  79              		.loc 1 38 0
+  80 0034 FFF7FEFF 		bl	QuadDec_2_GetCounter
+  81              	.LVL8:
+  82 0038 374B     		ldr	r3, .L9+4
+  83 003a 1860     		str	r0, [r3]
+  39:main.c        ****         
+  40:main.c        ****         State = P3_0_Read();
+  84              		.loc 1 40 0
+  85 003c FFF7FEFF 		bl	P3_0_Read
+  86              	.LVL9:
+  87 0040 364C     		ldr	r4, .L9+8
+  88 0042 2060     		str	r0, [r4]
+  41:main.c        ****         State = P3_1_Read();   
+  89              		.loc 1 41 0
+  90 0044 FFF7FEFF 		bl	P3_1_Read
+  91              	.LVL10:
+  92 0048 2060     		str	r0, [r4]
+  42:main.c        ****         
+  43:main.c        ****         if(State != LastState)
+  93              		.loc 1 43 0
+  94 004a 354B     		ldr	r3, .L9+12
+  95 004c 1B68     		ldr	r3, [r3]
+  96 004e 9842     		cmp	r0, r3
+  97 0050 03D0     		beq	.L3
+  44:main.c        ****         {
+  45:main.c        ****             if( State != State)
+  46:main.c        ****             {
+  47:main.c        ****                 soft_count = soft_count - 1;
+  48:main.c        ****                 
+  49:main.c        ****             }else {
+  50:main.c        ****                 soft_count = soft_count + 1;
+  98              		.loc 1 50 0
+  99 0052 334A     		ldr	r2, .L9+12
+ 100 0054 5368     		ldr	r3, [r2, #4]
+ 101 0056 0133     		adds	r3, r3, #1
+ 102 0058 5360     		str	r3, [r2, #4]
+ 103              	.L3:
+  51:main.c        ****                 
+  52:main.c        ****             }
+  53:main.c        ****         }
+  54:main.c        ****         LastState = State;
+ 104              		.loc 1 54 0
+ 105 005a 314B     		ldr	r3, .L9+12
+ 106 005c 1860     		str	r0, [r3]
+  55:main.c        **** 
+  56:main.c        ****         int counter = soft_count;
+ 107              		.loc 1 56 0
+ 108 005e 5868     		ldr	r0, [r3, #4]
+ 109              	.LVL11:
+  57:main.c        **** 
+  58:main.c        ****         if (counter< 0){
+ 110              		.loc 1 58 0
+ 111 0060 0028     		cmp	r0, #0
+ 112 0062 18DA     		bge	.L4
+  59:main.c        ****             counter = counter/2.0;
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 4
+
+
+ 113              		.loc 1 59 0
+ 114 0064 FFF7FEFF 		bl	__aeabi_i2d
+ 115              	.LVL12:
+ 116 0068 0022     		movs	r2, #0
+ 117 006a 2E4B     		ldr	r3, .L9+16
+ 118 006c FFF7FEFF 		bl	__aeabi_dmul
+ 119              	.LVL13:
+ 120 0070 FFF7FEFF 		bl	__aeabi_d2iz
+ 121              	.LVL14:
+  60:main.c        ****             counter = 65537 - counter;
+ 122              		.loc 1 60 0
+ 123 0074 C0F10114 		rsb	r4, r0, #65537
+ 124              	.LVL15:
+  61:main.c        ****             LCD_Char_2_Position(1,0);
+ 125              		.loc 1 61 0
+ 126 0078 0021     		movs	r1, #0
+ 127 007a 0120     		movs	r0, #1
+ 128 007c FFF7FEFF 		bl	LCD_Char_2_Position
+ 129              	.LVL16:
+  62:main.c        ****             LCD_Char_2_PrintString("Software = -");
+ 130              		.loc 1 62 0
+ 131 0080 2948     		ldr	r0, .L9+20
+ 132 0082 FFF7FEFF 		bl	LCD_Char_2_PrintString
+ 133              	.LVL17:
+  63:main.c        ****             LCD_Char_2_Position(1,12);
+ 134              		.loc 1 63 0
+ 135 0086 0C21     		movs	r1, #12
+ 136 0088 0120     		movs	r0, #1
+ 137 008a FFF7FEFF 		bl	LCD_Char_2_Position
+ 138              	.LVL18:
+  64:main.c        ****             LCD_Char_2_PrintNumber(counter);
+ 139              		.loc 1 64 0
+ 140 008e A0B2     		uxth	r0, r4
+ 141 0090 FFF7FEFF 		bl	LCD_Char_2_PrintU32Number
+ 142              	.LVL19:
+ 143 0094 16E0     		b	.L5
+ 144              	.LVL20:
+ 145              	.L4:
+  65:main.c        ****         }else{
+  66:main.c        ****             counter = counter/2.0;
+ 146              		.loc 1 66 0
+ 147 0096 FFF7FEFF 		bl	__aeabi_i2d
+ 148              	.LVL21:
+ 149 009a 0022     		movs	r2, #0
+ 150 009c 214B     		ldr	r3, .L9+16
+ 151 009e FFF7FEFF 		bl	__aeabi_dmul
+ 152              	.LVL22:
+ 153 00a2 FFF7FEFF 		bl	__aeabi_d2iz
+ 154              	.LVL23:
+ 155 00a6 0446     		mov	r4, r0
+ 156              	.LVL24:
+  67:main.c        ****             LCD_Char_2_Position(1,0);
+ 157              		.loc 1 67 0
+ 158 00a8 0021     		movs	r1, #0
+ 159 00aa 0120     		movs	r0, #1
+ 160              	.LVL25:
+ 161 00ac FFF7FEFF 		bl	LCD_Char_2_Position
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 5
+
+
+ 162              	.LVL26:
+  68:main.c        ****             LCD_Char_2_PrintString("Software =   ");
+ 163              		.loc 1 68 0
+ 164 00b0 1E48     		ldr	r0, .L9+24
+ 165 00b2 FFF7FEFF 		bl	LCD_Char_2_PrintString
+ 166              	.LVL27:
+  69:main.c        ****             LCD_Char_2_Position(1,11);
+ 167              		.loc 1 69 0
+ 168 00b6 0B21     		movs	r1, #11
+ 169 00b8 0120     		movs	r0, #1
+ 170 00ba FFF7FEFF 		bl	LCD_Char_2_Position
+ 171              	.LVL28:
+  70:main.c        ****             LCD_Char_2_PrintNumber(counter);
+ 172              		.loc 1 70 0
+ 173 00be A0B2     		uxth	r0, r4
+ 174 00c0 FFF7FEFF 		bl	LCD_Char_2_PrintU32Number
+ 175              	.LVL29:
+ 176              	.L5:
+  71:main.c        ****         
+  72:main.c        ****         }
+  73:main.c        ****         
+  74:main.c        ****         if (count >= 0){
+ 177              		.loc 1 74 0
+ 178 00c4 144B     		ldr	r3, .L9+4
+ 179 00c6 1B68     		ldr	r3, [r3]
+ 180 00c8 002B     		cmp	r3, #0
+ 181 00ca 0FDB     		blt	.L6
+  75:main.c        ****             LCD_Char_2_Position(0,0);
+ 182              		.loc 1 75 0
+ 183 00cc 0021     		movs	r1, #0
+ 184 00ce 0846     		mov	r0, r1
+ 185 00d0 FFF7FEFF 		bl	LCD_Char_2_Position
+ 186              	.LVL30:
+  76:main.c        ****             LCD_Char_2_PrintString("Hardware =   ");
+ 187              		.loc 1 76 0
+ 188 00d4 1648     		ldr	r0, .L9+28
+ 189 00d6 FFF7FEFF 		bl	LCD_Char_2_PrintString
+ 190              	.LVL31:
+  77:main.c        ****             LCD_Char_2_Position(0,11);
+ 191              		.loc 1 77 0
+ 192 00da 0B21     		movs	r1, #11
+ 193 00dc 0020     		movs	r0, #0
+ 194 00de FFF7FEFF 		bl	LCD_Char_2_Position
+ 195              	.LVL32:
+  78:main.c        ****             LCD_Char_2_PrintNumber(count);
+ 196              		.loc 1 78 0
+ 197 00e2 0D4B     		ldr	r3, .L9+4
+ 198 00e4 1888     		ldrh	r0, [r3]
+ 199 00e6 FFF7FEFF 		bl	LCD_Char_2_PrintU32Number
+ 200              	.LVL33:
+ 201 00ea A3E7     		b	.L2
+ 202              	.L6:
+  79:main.c        ****            
+  80:main.c        ****         }else{
+  81:main.c        ****             count = 65536 - count;
+ 203              		.loc 1 81 0
+ 204 00ec C3F58033 		rsb	r3, r3, #65536
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 6
+
+
+ 205 00f0 094C     		ldr	r4, .L9+4
+ 206              	.LVL34:
+ 207 00f2 2360     		str	r3, [r4]
+  82:main.c        ****             LCD_Char_2_Position(0,0);
+ 208              		.loc 1 82 0
+ 209 00f4 0021     		movs	r1, #0
+ 210 00f6 0846     		mov	r0, r1
+ 211 00f8 FFF7FEFF 		bl	LCD_Char_2_Position
+ 212              	.LVL35:
+  83:main.c        ****             LCD_Char_2_PrintString("Hardware = -");
+ 213              		.loc 1 83 0
+ 214 00fc 0D48     		ldr	r0, .L9+32
+ 215 00fe FFF7FEFF 		bl	LCD_Char_2_PrintString
+ 216              	.LVL36:
+  84:main.c        ****             LCD_Char_2_Position(0,12);
+ 217              		.loc 1 84 0
+ 218 0102 0C21     		movs	r1, #12
+ 219 0104 0020     		movs	r0, #0
+ 220 0106 FFF7FEFF 		bl	LCD_Char_2_Position
+ 221              	.LVL37:
+  85:main.c        ****             LCD_Char_2_PrintNumber(count);
+ 222              		.loc 1 85 0
+ 223 010a 2088     		ldrh	r0, [r4]
+ 224 010c FFF7FEFF 		bl	LCD_Char_2_PrintU32Number
+ 225              	.LVL38:
+ 226 0110 90E7     		b	.L2
+ 227              	.L10:
+ 228 0112 00BF     		.align	2
+ 229              	.L9:
+ 230 0114 00000000 		.word	.LC0
+ 231 0118 00000000 		.word	count
+ 232 011c 00000000 		.word	State
+ 233 0120 00000000 		.word	.LANCHOR0
+ 234 0124 0000E03F 		.word	1071644672
+ 235 0128 08000000 		.word	.LC1
+ 236 012c 18000000 		.word	.LC2
+ 237 0130 28000000 		.word	.LC3
+ 238 0134 38000000 		.word	.LC4
+ 239              	.LBE2:
+ 240              		.cfi_endproc
+ 241              	.LFE63:
+ 242              		.size	main, .-main
+ 243              		.global	soft_count
+ 244              		.comm	count,4,4
+ 245              		.comm	State,4,4
+ 246              		.global	LastState
+ 247              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 248              		.align	2
+ 249              	.LC0:
+ 250 0000 456E636F 		.ascii	"Encoder\000"
+ 250      64657200 
+ 251              	.LC1:
+ 252 0008 536F6674 		.ascii	"Software = -\000"
+ 252      77617265 
+ 252      203D202D 
+ 252      00
+ 253 0015 000000   		.space	3
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 7
+
+
+ 254              	.LC2:
+ 255 0018 536F6674 		.ascii	"Software =   \000"
+ 255      77617265 
+ 255      203D2020 
+ 255      2000
+ 256 0026 0000     		.space	2
+ 257              	.LC3:
+ 258 0028 48617264 		.ascii	"Hardware =   \000"
+ 258      77617265 
+ 258      203D2020 
+ 258      2000
+ 259 0036 0000     		.space	2
+ 260              	.LC4:
+ 261 0038 48617264 		.ascii	"Hardware = -\000"
+ 261      77617265 
+ 261      203D202D 
+ 261      00
+ 262              		.bss
+ 263              		.align	2
+ 264              		.set	.LANCHOR0,. + 0
+ 265              		.type	LastState, %object
+ 266              		.size	LastState, 4
+ 267              	LastState:
+ 268 0000 00000000 		.space	4
+ 269              		.type	soft_count, %object
+ 270              		.size	soft_count, 4
+ 271              	soft_count:
+ 272 0004 00000000 		.space	4
+ 273              		.text
+ 274              	.Letext0:
+ 275              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 276              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 277              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 278              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 279              		.file 6 "Generated_Source\\PSoC5/QuadDec_2.h"
+ 280              		.file 7 "Generated_Source\\PSoC5/LCD_Char_2.h"
+ 281              		.file 8 "Generated_Source\\PSoC5/Clock_2.h"
+ 282              		.file 9 "Generated_Source\\PSoC5/CyLib.h"
+ 283              		.section	.debug_info,"",%progbits
+ 284              	.Ldebug_info0:
+ 285 0000 D3030000 		.4byte	0x3d3
+ 286 0004 0400     		.2byte	0x4
+ 287 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 288 000a 04       		.byte	0x4
+ 289 000b 01       		.uleb128 0x1
+ 290 000c 51000000 		.4byte	.LASF33
+ 291 0010 0C       		.byte	0xc
+ 292 0011 26020000 		.4byte	.LASF34
+ 293 0015 47010000 		.4byte	.LASF35
+ 294 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 295 001d 00000000 		.4byte	0
+ 296 0021 00000000 		.4byte	.Ldebug_line0
+ 297 0025 02       		.uleb128 0x2
+ 298 0026 01       		.byte	0x1
+ 299 0027 06       		.byte	0x6
+ 300 0028 71020000 		.4byte	.LASF0
+ 301 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 8
+
+
+ 302 002d 01       		.byte	0x1
+ 303 002e 08       		.byte	0x8
+ 304 002f 43000000 		.4byte	.LASF1
+ 305 0033 02       		.uleb128 0x2
+ 306 0034 02       		.byte	0x2
+ 307 0035 05       		.byte	0x5
+ 308 0036 52020000 		.4byte	.LASF2
+ 309 003a 02       		.uleb128 0x2
+ 310 003b 02       		.byte	0x2
+ 311 003c 07       		.byte	0x7
+ 312 003d F1000000 		.4byte	.LASF3
+ 313 0041 03       		.uleb128 0x3
+ 314 0042 17000000 		.4byte	.LASF9
+ 315 0046 02       		.byte	0x2
+ 316 0047 3F       		.byte	0x3f
+ 317 0048 4C000000 		.4byte	0x4c
+ 318 004c 02       		.uleb128 0x2
+ 319 004d 04       		.byte	0x4
+ 320 004e 05       		.byte	0x5
+ 321 004f 5C020000 		.4byte	.LASF4
+ 322 0053 02       		.uleb128 0x2
+ 323 0054 04       		.byte	0x4
+ 324 0055 07       		.byte	0x7
+ 325 0056 DF000000 		.4byte	.LASF5
+ 326 005a 02       		.uleb128 0x2
+ 327 005b 08       		.byte	0x8
+ 328 005c 05       		.byte	0x5
+ 329 005d 18020000 		.4byte	.LASF6
+ 330 0061 02       		.uleb128 0x2
+ 331 0062 08       		.byte	0x8
+ 332 0063 07       		.byte	0x7
+ 333 0064 A4010000 		.4byte	.LASF7
+ 334 0068 04       		.uleb128 0x4
+ 335 0069 04       		.byte	0x4
+ 336 006a 05       		.byte	0x5
+ 337 006b 696E7400 		.ascii	"int\000"
+ 338 006f 02       		.uleb128 0x2
+ 339 0070 04       		.byte	0x4
+ 340 0071 07       		.byte	0x7
+ 341 0072 97010000 		.4byte	.LASF8
+ 342 0076 03       		.uleb128 0x3
+ 343 0077 FC010000 		.4byte	.LASF10
+ 344 007b 03       		.byte	0x3
+ 345 007c 2C       		.byte	0x2c
+ 346 007d 41000000 		.4byte	0x41
+ 347 0081 05       		.uleb128 0x5
+ 348 0082 90010000 		.4byte	.LASF11
+ 349 0086 04       		.byte	0x4
+ 350 0087 E901     		.2byte	0x1e9
+ 351 0089 3A000000 		.4byte	0x3a
+ 352 008d 02       		.uleb128 0x2
+ 353 008e 04       		.byte	0x4
+ 354 008f 04       		.byte	0x4
+ 355 0090 35000000 		.4byte	.LASF12
+ 356 0094 02       		.uleb128 0x2
+ 357 0095 08       		.byte	0x8
+ 358 0096 04       		.byte	0x4
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 9
+
+
+ 359 0097 40010000 		.4byte	.LASF13
+ 360 009b 02       		.uleb128 0x2
+ 361 009c 01       		.byte	0x1
+ 362 009d 08       		.byte	0x8
+ 363 009e 2D020000 		.4byte	.LASF14
+ 364 00a2 02       		.uleb128 0x2
+ 365 00a3 08       		.byte	0x8
+ 366 00a4 04       		.byte	0x4
+ 367 00a5 65020000 		.4byte	.LASF15
+ 368 00a9 02       		.uleb128 0x2
+ 369 00aa 04       		.byte	0x4
+ 370 00ab 07       		.byte	0x7
+ 371 00ac 04020000 		.4byte	.LASF16
+ 372 00b0 06       		.uleb128 0x6
+ 373 00b1 8B010000 		.4byte	.LASF36
+ 374 00b5 01       		.byte	0x1
+ 375 00b6 16       		.byte	0x16
+ 376 00b7 68000000 		.4byte	0x68
+ 377 00bb 00000000 		.4byte	.LFB63
+ 378 00bf 38010000 		.4byte	.LFE63-.LFB63
+ 379 00c3 01       		.uleb128 0x1
+ 380 00c4 9C       		.byte	0x9c
+ 381 00c5 08030000 		.4byte	0x308
+ 382 00c9 07       		.uleb128 0x7
+ 383 00ca 34000000 		.4byte	.LBB2
+ 384 00ce 04010000 		.4byte	.LBE2-.LBB2
+ 385 00d2 81020000 		.4byte	0x281
+ 386 00d6 08       		.uleb128 0x8
+ 387 00d7 2B000000 		.4byte	.LASF17
+ 388 00db 01       		.byte	0x1
+ 389 00dc 28       		.byte	0x28
+ 390 00dd 68000000 		.4byte	0x68
+ 391 00e1 E7000000 		.4byte	0xe7
+ 392 00e5 09       		.uleb128 0x9
+ 393 00e6 00       		.byte	0
+ 394 00e7 08       		.uleb128 0x8
+ 395 00e8 1B010000 		.4byte	.LASF18
+ 396 00ec 01       		.byte	0x1
+ 397 00ed 29       		.byte	0x29
+ 398 00ee 68000000 		.4byte	0x68
+ 399 00f2 F8000000 		.4byte	0xf8
+ 400 00f6 09       		.uleb128 0x9
+ 401 00f7 00       		.byte	0
+ 402 00f8 0A       		.uleb128 0xa
+ 403 00f9 3B000000 		.4byte	.LASF37
+ 404 00fd 01       		.byte	0x1
+ 405 00fe 38       		.byte	0x38
+ 406 00ff 68000000 		.4byte	0x68
+ 407 0103 00000000 		.4byte	.LLST0
+ 408 0107 0B       		.uleb128 0xb
+ 409 0108 38000000 		.4byte	.LVL8
+ 410 010c 5D030000 		.4byte	0x35d
+ 411 0110 0B       		.uleb128 0xb
+ 412 0111 40000000 		.4byte	.LVL9
+ 413 0115 68030000 		.4byte	0x368
+ 414 0119 0B       		.uleb128 0xb
+ 415 011a 48000000 		.4byte	.LVL10
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 10
+
+
+ 416 011e 73030000 		.4byte	0x373
+ 417 0122 0C       		.uleb128 0xc
+ 418 0123 80000000 		.4byte	.LVL16
+ 419 0127 7E030000 		.4byte	0x37e
+ 420 012b 3A010000 		.4byte	0x13a
+ 421 012f 0D       		.uleb128 0xd
+ 422 0130 01       		.uleb128 0x1
+ 423 0131 50       		.byte	0x50
+ 424 0132 01       		.uleb128 0x1
+ 425 0133 31       		.byte	0x31
+ 426 0134 0D       		.uleb128 0xd
+ 427 0135 01       		.uleb128 0x1
+ 428 0136 51       		.byte	0x51
+ 429 0137 01       		.uleb128 0x1
+ 430 0138 30       		.byte	0x30
+ 431 0139 00       		.byte	0
+ 432 013a 0C       		.uleb128 0xc
+ 433 013b 86000000 		.4byte	.LVL17
+ 434 013f 89030000 		.4byte	0x389
+ 435 0143 51010000 		.4byte	0x151
+ 436 0147 0D       		.uleb128 0xd
+ 437 0148 01       		.uleb128 0x1
+ 438 0149 50       		.byte	0x50
+ 439 014a 05       		.uleb128 0x5
+ 440 014b 03       		.byte	0x3
+ 441 014c 08000000 		.4byte	.LC1
+ 442 0150 00       		.byte	0
+ 443 0151 0C       		.uleb128 0xc
+ 444 0152 8E000000 		.4byte	.LVL18
+ 445 0156 7E030000 		.4byte	0x37e
+ 446 015a 69010000 		.4byte	0x169
+ 447 015e 0D       		.uleb128 0xd
+ 448 015f 01       		.uleb128 0x1
+ 449 0160 50       		.byte	0x50
+ 450 0161 01       		.uleb128 0x1
+ 451 0162 31       		.byte	0x31
+ 452 0163 0D       		.uleb128 0xd
+ 453 0164 01       		.uleb128 0x1
+ 454 0165 51       		.byte	0x51
+ 455 0166 01       		.uleb128 0x1
+ 456 0167 3C       		.byte	0x3c
+ 457 0168 00       		.byte	0
+ 458 0169 0C       		.uleb128 0xc
+ 459 016a 94000000 		.4byte	.LVL19
+ 460 016e 94030000 		.4byte	0x394
+ 461 0172 81010000 		.4byte	0x181
+ 462 0176 0D       		.uleb128 0xd
+ 463 0177 01       		.uleb128 0x1
+ 464 0178 50       		.byte	0x50
+ 465 0179 06       		.uleb128 0x6
+ 466 017a 74       		.byte	0x74
+ 467 017b 00       		.sleb128 0
+ 468 017c 0A       		.byte	0xa
+ 469 017d FFFF     		.2byte	0xffff
+ 470 017f 1A       		.byte	0x1a
+ 471 0180 00       		.byte	0
+ 472 0181 0C       		.uleb128 0xc
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 11
+
+
+ 473 0182 B0000000 		.4byte	.LVL26
+ 474 0186 7E030000 		.4byte	0x37e
+ 475 018a 99010000 		.4byte	0x199
+ 476 018e 0D       		.uleb128 0xd
+ 477 018f 01       		.uleb128 0x1
+ 478 0190 50       		.byte	0x50
+ 479 0191 01       		.uleb128 0x1
+ 480 0192 31       		.byte	0x31
+ 481 0193 0D       		.uleb128 0xd
+ 482 0194 01       		.uleb128 0x1
+ 483 0195 51       		.byte	0x51
+ 484 0196 01       		.uleb128 0x1
+ 485 0197 30       		.byte	0x30
+ 486 0198 00       		.byte	0
+ 487 0199 0C       		.uleb128 0xc
+ 488 019a B6000000 		.4byte	.LVL27
+ 489 019e 89030000 		.4byte	0x389
+ 490 01a2 B0010000 		.4byte	0x1b0
+ 491 01a6 0D       		.uleb128 0xd
+ 492 01a7 01       		.uleb128 0x1
+ 493 01a8 50       		.byte	0x50
+ 494 01a9 05       		.uleb128 0x5
+ 495 01aa 03       		.byte	0x3
+ 496 01ab 18000000 		.4byte	.LC2
+ 497 01af 00       		.byte	0
+ 498 01b0 0C       		.uleb128 0xc
+ 499 01b1 BE000000 		.4byte	.LVL28
+ 500 01b5 7E030000 		.4byte	0x37e
+ 501 01b9 C8010000 		.4byte	0x1c8
+ 502 01bd 0D       		.uleb128 0xd
+ 503 01be 01       		.uleb128 0x1
+ 504 01bf 50       		.byte	0x50
+ 505 01c0 01       		.uleb128 0x1
+ 506 01c1 31       		.byte	0x31
+ 507 01c2 0D       		.uleb128 0xd
+ 508 01c3 01       		.uleb128 0x1
+ 509 01c4 51       		.byte	0x51
+ 510 01c5 01       		.uleb128 0x1
+ 511 01c6 3B       		.byte	0x3b
+ 512 01c7 00       		.byte	0
+ 513 01c8 0C       		.uleb128 0xc
+ 514 01c9 C4000000 		.4byte	.LVL29
+ 515 01cd 94030000 		.4byte	0x394
+ 516 01d1 E0010000 		.4byte	0x1e0
+ 517 01d5 0D       		.uleb128 0xd
+ 518 01d6 01       		.uleb128 0x1
+ 519 01d7 50       		.byte	0x50
+ 520 01d8 06       		.uleb128 0x6
+ 521 01d9 74       		.byte	0x74
+ 522 01da 00       		.sleb128 0
+ 523 01db 0A       		.byte	0xa
+ 524 01dc FFFF     		.2byte	0xffff
+ 525 01de 1A       		.byte	0x1a
+ 526 01df 00       		.byte	0
+ 527 01e0 0C       		.uleb128 0xc
+ 528 01e1 D4000000 		.4byte	.LVL30
+ 529 01e5 7E030000 		.4byte	0x37e
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 12
+
+
+ 530 01e9 F8010000 		.4byte	0x1f8
+ 531 01ed 0D       		.uleb128 0xd
+ 532 01ee 01       		.uleb128 0x1
+ 533 01ef 50       		.byte	0x50
+ 534 01f0 01       		.uleb128 0x1
+ 535 01f1 30       		.byte	0x30
+ 536 01f2 0D       		.uleb128 0xd
+ 537 01f3 01       		.uleb128 0x1
+ 538 01f4 51       		.byte	0x51
+ 539 01f5 01       		.uleb128 0x1
+ 540 01f6 30       		.byte	0x30
+ 541 01f7 00       		.byte	0
+ 542 01f8 0C       		.uleb128 0xc
+ 543 01f9 DA000000 		.4byte	.LVL31
+ 544 01fd 89030000 		.4byte	0x389
+ 545 0201 0F020000 		.4byte	0x20f
+ 546 0205 0D       		.uleb128 0xd
+ 547 0206 01       		.uleb128 0x1
+ 548 0207 50       		.byte	0x50
+ 549 0208 05       		.uleb128 0x5
+ 550 0209 03       		.byte	0x3
+ 551 020a 28000000 		.4byte	.LC3
+ 552 020e 00       		.byte	0
+ 553 020f 0C       		.uleb128 0xc
+ 554 0210 E2000000 		.4byte	.LVL32
+ 555 0214 7E030000 		.4byte	0x37e
+ 556 0218 27020000 		.4byte	0x227
+ 557 021c 0D       		.uleb128 0xd
+ 558 021d 01       		.uleb128 0x1
+ 559 021e 50       		.byte	0x50
+ 560 021f 01       		.uleb128 0x1
+ 561 0220 30       		.byte	0x30
+ 562 0221 0D       		.uleb128 0xd
+ 563 0222 01       		.uleb128 0x1
+ 564 0223 51       		.byte	0x51
+ 565 0224 01       		.uleb128 0x1
+ 566 0225 3B       		.byte	0x3b
+ 567 0226 00       		.byte	0
+ 568 0227 0B       		.uleb128 0xb
+ 569 0228 EA000000 		.4byte	.LVL33
+ 570 022c 94030000 		.4byte	0x394
+ 571 0230 0C       		.uleb128 0xc
+ 572 0231 FC000000 		.4byte	.LVL35
+ 573 0235 7E030000 		.4byte	0x37e
+ 574 0239 48020000 		.4byte	0x248
+ 575 023d 0D       		.uleb128 0xd
+ 576 023e 01       		.uleb128 0x1
+ 577 023f 50       		.byte	0x50
+ 578 0240 01       		.uleb128 0x1
+ 579 0241 30       		.byte	0x30
+ 580 0242 0D       		.uleb128 0xd
+ 581 0243 01       		.uleb128 0x1
+ 582 0244 51       		.byte	0x51
+ 583 0245 01       		.uleb128 0x1
+ 584 0246 30       		.byte	0x30
+ 585 0247 00       		.byte	0
+ 586 0248 0C       		.uleb128 0xc
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 13
+
+
+ 587 0249 02010000 		.4byte	.LVL36
+ 588 024d 89030000 		.4byte	0x389
+ 589 0251 5F020000 		.4byte	0x25f
+ 590 0255 0D       		.uleb128 0xd
+ 591 0256 01       		.uleb128 0x1
+ 592 0257 50       		.byte	0x50
+ 593 0258 05       		.uleb128 0x5
+ 594 0259 03       		.byte	0x3
+ 595 025a 38000000 		.4byte	.LC4
+ 596 025e 00       		.byte	0
+ 597 025f 0C       		.uleb128 0xc
+ 598 0260 0A010000 		.4byte	.LVL37
+ 599 0264 7E030000 		.4byte	0x37e
+ 600 0268 77020000 		.4byte	0x277
+ 601 026c 0D       		.uleb128 0xd
+ 602 026d 01       		.uleb128 0x1
+ 603 026e 50       		.byte	0x50
+ 604 026f 01       		.uleb128 0x1
+ 605 0270 30       		.byte	0x30
+ 606 0271 0D       		.uleb128 0xd
+ 607 0272 01       		.uleb128 0x1
+ 608 0273 51       		.byte	0x51
+ 609 0274 01       		.uleb128 0x1
+ 610 0275 3C       		.byte	0x3c
+ 611 0276 00       		.byte	0
+ 612 0277 0B       		.uleb128 0xb
+ 613 0278 10010000 		.4byte	.LVL38
+ 614 027c 94030000 		.4byte	0x394
+ 615 0280 00       		.byte	0
+ 616 0281 0B       		.uleb128 0xb
+ 617 0282 08000000 		.4byte	.LVL0
+ 618 0286 9F030000 		.4byte	0x39f
+ 619 028a 0B       		.uleb128 0xb
+ 620 028b 0C000000 		.4byte	.LVL1
+ 621 028f AA030000 		.4byte	0x3aa
+ 622 0293 0B       		.uleb128 0xb
+ 623 0294 10000000 		.4byte	.LVL2
+ 624 0298 B5030000 		.4byte	0x3b5
+ 625 029c 0C       		.uleb128 0xc
+ 626 029d 18000000 		.4byte	.LVL3
+ 627 02a1 7E030000 		.4byte	0x37e
+ 628 02a5 B4020000 		.4byte	0x2b4
+ 629 02a9 0D       		.uleb128 0xd
+ 630 02aa 01       		.uleb128 0x1
+ 631 02ab 50       		.byte	0x50
+ 632 02ac 01       		.uleb128 0x1
+ 633 02ad 30       		.byte	0x30
+ 634 02ae 0D       		.uleb128 0xd
+ 635 02af 01       		.uleb128 0x1
+ 636 02b0 51       		.byte	0x51
+ 637 02b1 01       		.uleb128 0x1
+ 638 02b2 30       		.byte	0x30
+ 639 02b3 00       		.byte	0
+ 640 02b4 0C       		.uleb128 0xc
+ 641 02b5 1E000000 		.4byte	.LVL4
+ 642 02b9 89030000 		.4byte	0x389
+ 643 02bd CB020000 		.4byte	0x2cb
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 14
+
+
+ 644 02c1 0D       		.uleb128 0xd
+ 645 02c2 01       		.uleb128 0x1
+ 646 02c3 50       		.byte	0x50
+ 647 02c4 05       		.uleb128 0x5
+ 648 02c5 03       		.byte	0x3
+ 649 02c6 00000000 		.4byte	.LC0
+ 650 02ca 00       		.byte	0
+ 651 02cb 0C       		.uleb128 0xc
+ 652 02cc 26000000 		.4byte	.LVL5
+ 653 02d0 7E030000 		.4byte	0x37e
+ 654 02d4 E3020000 		.4byte	0x2e3
+ 655 02d8 0D       		.uleb128 0xd
+ 656 02d9 01       		.uleb128 0x1
+ 657 02da 50       		.byte	0x50
+ 658 02db 01       		.uleb128 0x1
+ 659 02dc 30       		.byte	0x30
+ 660 02dd 0D       		.uleb128 0xd
+ 661 02de 01       		.uleb128 0x1
+ 662 02df 51       		.byte	0x51
+ 663 02e0 01       		.uleb128 0x1
+ 664 02e1 30       		.byte	0x30
+ 665 02e2 00       		.byte	0
+ 666 02e3 0C       		.uleb128 0xc
+ 667 02e4 2E000000 		.4byte	.LVL6
+ 668 02e8 C0030000 		.4byte	0x3c0
+ 669 02ec F8020000 		.4byte	0x2f8
+ 670 02f0 0D       		.uleb128 0xd
+ 671 02f1 01       		.uleb128 0x1
+ 672 02f2 50       		.byte	0x50
+ 673 02f3 03       		.uleb128 0x3
+ 674 02f4 0A       		.byte	0xa
+ 675 02f5 D007     		.2byte	0x7d0
+ 676 02f7 00       		.byte	0
+ 677 02f8 0E       		.uleb128 0xe
+ 678 02f9 34000000 		.4byte	.LVL7
+ 679 02fd CB030000 		.4byte	0x3cb
+ 680 0301 0D       		.uleb128 0xd
+ 681 0302 01       		.uleb128 0x1
+ 682 0303 50       		.byte	0x50
+ 683 0304 01       		.uleb128 0x1
+ 684 0305 31       		.byte	0x31
+ 685 0306 00       		.byte	0
+ 686 0307 00       		.byte	0
+ 687 0308 0F       		.uleb128 0xf
+ 688 0309 25010000 		.4byte	.LASF19
+ 689 030d 05       		.byte	0x5
+ 690 030e 1207     		.2byte	0x712
+ 691 0310 14030000 		.4byte	0x314
+ 692 0314 10       		.uleb128 0x10
+ 693 0315 76000000 		.4byte	0x76
+ 694 0319 11       		.uleb128 0x11
+ 695 031a 21000000 		.4byte	.LASF20
+ 696 031e 01       		.byte	0x1
+ 697 031f 13       		.byte	0x13
+ 698 0320 68000000 		.4byte	0x68
+ 699 0324 05       		.uleb128 0x5
+ 700 0325 03       		.byte	0x3
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 15
+
+
+ 701 0326 00000000 		.4byte	LastState
+ 702 032a 11       		.uleb128 0x11
+ 703 032b 15010000 		.4byte	.LASF21
+ 704 032f 01       		.byte	0x1
+ 705 0330 13       		.byte	0x13
+ 706 0331 68000000 		.4byte	0x68
+ 707 0335 05       		.uleb128 0x5
+ 708 0336 03       		.byte	0x3
+ 709 0337 00000000 		.4byte	State
+ 710 033b 11       		.uleb128 0x11
+ 711 033c 4C020000 		.4byte	.LASF22
+ 712 0340 01       		.byte	0x1
+ 713 0341 13       		.byte	0x13
+ 714 0342 68000000 		.4byte	0x68
+ 715 0346 05       		.uleb128 0x5
+ 716 0347 03       		.byte	0x3
+ 717 0348 00000000 		.4byte	count
+ 718 034c 11       		.uleb128 0x11
+ 719 034d 0D020000 		.4byte	.LASF23
+ 720 0351 01       		.byte	0x1
+ 721 0352 13       		.byte	0x13
+ 722 0353 68000000 		.4byte	0x68
+ 723 0357 05       		.uleb128 0x5
+ 724 0358 03       		.byte	0x3
+ 725 0359 00000000 		.4byte	soft_count
+ 726 035d 12       		.uleb128 0x12
+ 727 035e CF010000 		.4byte	.LASF24
+ 728 0362 CF010000 		.4byte	.LASF24
+ 729 0366 06       		.byte	0x6
+ 730 0367 4E       		.byte	0x4e
+ 731 0368 12       		.uleb128 0x12
+ 732 0369 2B000000 		.4byte	.LASF17
+ 733 036d 2B000000 		.4byte	.LASF17
+ 734 0371 01       		.byte	0x1
+ 735 0372 28       		.byte	0x28
+ 736 0373 12       		.uleb128 0x12
+ 737 0374 1B010000 		.4byte	.LASF18
+ 738 0378 1B010000 		.4byte	.LASF18
+ 739 037c 01       		.byte	0x1
+ 740 037d 29       		.byte	0x29
+ 741 037e 12       		.uleb128 0x12
+ 742 037f BB010000 		.4byte	.LASF25
+ 743 0383 BB010000 		.4byte	.LASF25
+ 744 0387 07       		.byte	0x7
+ 745 0388 3D       		.byte	0x3d
+ 746 0389 12       		.uleb128 0x12
+ 747 038a 00000000 		.4byte	.LASF26
+ 748 038e 00000000 		.4byte	.LASF26
+ 749 0392 07       		.byte	0x7
+ 750 0393 3C       		.byte	0x3c
+ 751 0394 12       		.uleb128 0x12
+ 752 0395 32020000 		.4byte	.LASF27
+ 753 0399 32020000 		.4byte	.LASF27
+ 754 039d 07       		.byte	0x7
+ 755 039e 61       		.byte	0x61
+ 756 039f 12       		.uleb128 0x12
+ 757 03a0 85020000 		.4byte	.LASF28
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 16
+
+
+ 758 03a4 85020000 		.4byte	.LASF28
+ 759 03a8 06       		.byte	0x6
+ 760 03a9 48       		.byte	0x48
+ 761 03aa 12       		.uleb128 0x12
+ 762 03ab 32010000 		.4byte	.LASF29
+ 763 03af 32010000 		.4byte	.LASF29
+ 764 03b3 08       		.byte	0x8
+ 765 03b4 27       		.byte	0x27
+ 766 03b5 12       		.uleb128 0x12
+ 767 03b6 04010000 		.4byte	.LASF30
+ 768 03ba 04010000 		.4byte	.LASF30
+ 769 03be 07       		.byte	0x7
+ 770 03bf 38       		.byte	0x38
+ 771 03c0 12       		.uleb128 0x12
+ 772 03c1 7D020000 		.4byte	.LASF31
+ 773 03c5 7D020000 		.4byte	.LASF31
+ 774 03c9 09       		.byte	0x9
+ 775 03ca 76       		.byte	0x76
+ 776 03cb 12       		.uleb128 0x12
+ 777 03cc E4010000 		.4byte	.LASF32
+ 778 03d0 E4010000 		.4byte	.LASF32
+ 779 03d4 07       		.byte	0x7
+ 780 03d5 3A       		.byte	0x3a
+ 781 03d6 00       		.byte	0
+ 782              		.section	.debug_abbrev,"",%progbits
+ 783              	.Ldebug_abbrev0:
+ 784 0000 01       		.uleb128 0x1
+ 785 0001 11       		.uleb128 0x11
+ 786 0002 01       		.byte	0x1
+ 787 0003 25       		.uleb128 0x25
+ 788 0004 0E       		.uleb128 0xe
+ 789 0005 13       		.uleb128 0x13
+ 790 0006 0B       		.uleb128 0xb
+ 791 0007 03       		.uleb128 0x3
+ 792 0008 0E       		.uleb128 0xe
+ 793 0009 1B       		.uleb128 0x1b
+ 794 000a 0E       		.uleb128 0xe
+ 795 000b 55       		.uleb128 0x55
+ 796 000c 17       		.uleb128 0x17
+ 797 000d 11       		.uleb128 0x11
+ 798 000e 01       		.uleb128 0x1
+ 799 000f 10       		.uleb128 0x10
+ 800 0010 17       		.uleb128 0x17
+ 801 0011 00       		.byte	0
+ 802 0012 00       		.byte	0
+ 803 0013 02       		.uleb128 0x2
+ 804 0014 24       		.uleb128 0x24
+ 805 0015 00       		.byte	0
+ 806 0016 0B       		.uleb128 0xb
+ 807 0017 0B       		.uleb128 0xb
+ 808 0018 3E       		.uleb128 0x3e
+ 809 0019 0B       		.uleb128 0xb
+ 810 001a 03       		.uleb128 0x3
+ 811 001b 0E       		.uleb128 0xe
+ 812 001c 00       		.byte	0
+ 813 001d 00       		.byte	0
+ 814 001e 03       		.uleb128 0x3
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 17
+
+
+ 815 001f 16       		.uleb128 0x16
+ 816 0020 00       		.byte	0
+ 817 0021 03       		.uleb128 0x3
+ 818 0022 0E       		.uleb128 0xe
+ 819 0023 3A       		.uleb128 0x3a
+ 820 0024 0B       		.uleb128 0xb
+ 821 0025 3B       		.uleb128 0x3b
+ 822 0026 0B       		.uleb128 0xb
+ 823 0027 49       		.uleb128 0x49
+ 824 0028 13       		.uleb128 0x13
+ 825 0029 00       		.byte	0
+ 826 002a 00       		.byte	0
+ 827 002b 04       		.uleb128 0x4
+ 828 002c 24       		.uleb128 0x24
+ 829 002d 00       		.byte	0
+ 830 002e 0B       		.uleb128 0xb
+ 831 002f 0B       		.uleb128 0xb
+ 832 0030 3E       		.uleb128 0x3e
+ 833 0031 0B       		.uleb128 0xb
+ 834 0032 03       		.uleb128 0x3
+ 835 0033 08       		.uleb128 0x8
+ 836 0034 00       		.byte	0
+ 837 0035 00       		.byte	0
+ 838 0036 05       		.uleb128 0x5
+ 839 0037 16       		.uleb128 0x16
+ 840 0038 00       		.byte	0
+ 841 0039 03       		.uleb128 0x3
+ 842 003a 0E       		.uleb128 0xe
+ 843 003b 3A       		.uleb128 0x3a
+ 844 003c 0B       		.uleb128 0xb
+ 845 003d 3B       		.uleb128 0x3b
+ 846 003e 05       		.uleb128 0x5
+ 847 003f 49       		.uleb128 0x49
+ 848 0040 13       		.uleb128 0x13
+ 849 0041 00       		.byte	0
+ 850 0042 00       		.byte	0
+ 851 0043 06       		.uleb128 0x6
+ 852 0044 2E       		.uleb128 0x2e
+ 853 0045 01       		.byte	0x1
+ 854 0046 3F       		.uleb128 0x3f
+ 855 0047 19       		.uleb128 0x19
+ 856 0048 03       		.uleb128 0x3
+ 857 0049 0E       		.uleb128 0xe
+ 858 004a 3A       		.uleb128 0x3a
+ 859 004b 0B       		.uleb128 0xb
+ 860 004c 3B       		.uleb128 0x3b
+ 861 004d 0B       		.uleb128 0xb
+ 862 004e 27       		.uleb128 0x27
+ 863 004f 19       		.uleb128 0x19
+ 864 0050 49       		.uleb128 0x49
+ 865 0051 13       		.uleb128 0x13
+ 866 0052 8701     		.uleb128 0x87
+ 867 0054 19       		.uleb128 0x19
+ 868 0055 11       		.uleb128 0x11
+ 869 0056 01       		.uleb128 0x1
+ 870 0057 12       		.uleb128 0x12
+ 871 0058 06       		.uleb128 0x6
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 18
+
+
+ 872 0059 40       		.uleb128 0x40
+ 873 005a 18       		.uleb128 0x18
+ 874 005b 9642     		.uleb128 0x2116
+ 875 005d 19       		.uleb128 0x19
+ 876 005e 01       		.uleb128 0x1
+ 877 005f 13       		.uleb128 0x13
+ 878 0060 00       		.byte	0
+ 879 0061 00       		.byte	0
+ 880 0062 07       		.uleb128 0x7
+ 881 0063 0B       		.uleb128 0xb
+ 882 0064 01       		.byte	0x1
+ 883 0065 11       		.uleb128 0x11
+ 884 0066 01       		.uleb128 0x1
+ 885 0067 12       		.uleb128 0x12
+ 886 0068 06       		.uleb128 0x6
+ 887 0069 01       		.uleb128 0x1
+ 888 006a 13       		.uleb128 0x13
+ 889 006b 00       		.byte	0
+ 890 006c 00       		.byte	0
+ 891 006d 08       		.uleb128 0x8
+ 892 006e 2E       		.uleb128 0x2e
+ 893 006f 01       		.byte	0x1
+ 894 0070 3F       		.uleb128 0x3f
+ 895 0071 19       		.uleb128 0x19
+ 896 0072 03       		.uleb128 0x3
+ 897 0073 0E       		.uleb128 0xe
+ 898 0074 3A       		.uleb128 0x3a
+ 899 0075 0B       		.uleb128 0xb
+ 900 0076 3B       		.uleb128 0x3b
+ 901 0077 0B       		.uleb128 0xb
+ 902 0078 49       		.uleb128 0x49
+ 903 0079 13       		.uleb128 0x13
+ 904 007a 3C       		.uleb128 0x3c
+ 905 007b 19       		.uleb128 0x19
+ 906 007c 01       		.uleb128 0x1
+ 907 007d 13       		.uleb128 0x13
+ 908 007e 00       		.byte	0
+ 909 007f 00       		.byte	0
+ 910 0080 09       		.uleb128 0x9
+ 911 0081 18       		.uleb128 0x18
+ 912 0082 00       		.byte	0
+ 913 0083 00       		.byte	0
+ 914 0084 00       		.byte	0
+ 915 0085 0A       		.uleb128 0xa
+ 916 0086 34       		.uleb128 0x34
+ 917 0087 00       		.byte	0
+ 918 0088 03       		.uleb128 0x3
+ 919 0089 0E       		.uleb128 0xe
+ 920 008a 3A       		.uleb128 0x3a
+ 921 008b 0B       		.uleb128 0xb
+ 922 008c 3B       		.uleb128 0x3b
+ 923 008d 0B       		.uleb128 0xb
+ 924 008e 49       		.uleb128 0x49
+ 925 008f 13       		.uleb128 0x13
+ 926 0090 02       		.uleb128 0x2
+ 927 0091 17       		.uleb128 0x17
+ 928 0092 00       		.byte	0
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 19
+
+
+ 929 0093 00       		.byte	0
+ 930 0094 0B       		.uleb128 0xb
+ 931 0095 898201   		.uleb128 0x4109
+ 932 0098 00       		.byte	0
+ 933 0099 11       		.uleb128 0x11
+ 934 009a 01       		.uleb128 0x1
+ 935 009b 31       		.uleb128 0x31
+ 936 009c 13       		.uleb128 0x13
+ 937 009d 00       		.byte	0
+ 938 009e 00       		.byte	0
+ 939 009f 0C       		.uleb128 0xc
+ 940 00a0 898201   		.uleb128 0x4109
+ 941 00a3 01       		.byte	0x1
+ 942 00a4 11       		.uleb128 0x11
+ 943 00a5 01       		.uleb128 0x1
+ 944 00a6 31       		.uleb128 0x31
+ 945 00a7 13       		.uleb128 0x13
+ 946 00a8 01       		.uleb128 0x1
+ 947 00a9 13       		.uleb128 0x13
+ 948 00aa 00       		.byte	0
+ 949 00ab 00       		.byte	0
+ 950 00ac 0D       		.uleb128 0xd
+ 951 00ad 8A8201   		.uleb128 0x410a
+ 952 00b0 00       		.byte	0
+ 953 00b1 02       		.uleb128 0x2
+ 954 00b2 18       		.uleb128 0x18
+ 955 00b3 9142     		.uleb128 0x2111
+ 956 00b5 18       		.uleb128 0x18
+ 957 00b6 00       		.byte	0
+ 958 00b7 00       		.byte	0
+ 959 00b8 0E       		.uleb128 0xe
+ 960 00b9 898201   		.uleb128 0x4109
+ 961 00bc 01       		.byte	0x1
+ 962 00bd 11       		.uleb128 0x11
+ 963 00be 01       		.uleb128 0x1
+ 964 00bf 31       		.uleb128 0x31
+ 965 00c0 13       		.uleb128 0x13
+ 966 00c1 00       		.byte	0
+ 967 00c2 00       		.byte	0
+ 968 00c3 0F       		.uleb128 0xf
+ 969 00c4 34       		.uleb128 0x34
+ 970 00c5 00       		.byte	0
+ 971 00c6 03       		.uleb128 0x3
+ 972 00c7 0E       		.uleb128 0xe
+ 973 00c8 3A       		.uleb128 0x3a
+ 974 00c9 0B       		.uleb128 0xb
+ 975 00ca 3B       		.uleb128 0x3b
+ 976 00cb 05       		.uleb128 0x5
+ 977 00cc 49       		.uleb128 0x49
+ 978 00cd 13       		.uleb128 0x13
+ 979 00ce 3F       		.uleb128 0x3f
+ 980 00cf 19       		.uleb128 0x19
+ 981 00d0 3C       		.uleb128 0x3c
+ 982 00d1 19       		.uleb128 0x19
+ 983 00d2 00       		.byte	0
+ 984 00d3 00       		.byte	0
+ 985 00d4 10       		.uleb128 0x10
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 20
+
+
+ 986 00d5 35       		.uleb128 0x35
+ 987 00d6 00       		.byte	0
+ 988 00d7 49       		.uleb128 0x49
+ 989 00d8 13       		.uleb128 0x13
+ 990 00d9 00       		.byte	0
+ 991 00da 00       		.byte	0
+ 992 00db 11       		.uleb128 0x11
+ 993 00dc 34       		.uleb128 0x34
+ 994 00dd 00       		.byte	0
+ 995 00de 03       		.uleb128 0x3
+ 996 00df 0E       		.uleb128 0xe
+ 997 00e0 3A       		.uleb128 0x3a
+ 998 00e1 0B       		.uleb128 0xb
+ 999 00e2 3B       		.uleb128 0x3b
+ 1000 00e3 0B       		.uleb128 0xb
+ 1001 00e4 49       		.uleb128 0x49
+ 1002 00e5 13       		.uleb128 0x13
+ 1003 00e6 3F       		.uleb128 0x3f
+ 1004 00e7 19       		.uleb128 0x19
+ 1005 00e8 02       		.uleb128 0x2
+ 1006 00e9 18       		.uleb128 0x18
+ 1007 00ea 00       		.byte	0
+ 1008 00eb 00       		.byte	0
+ 1009 00ec 12       		.uleb128 0x12
+ 1010 00ed 2E       		.uleb128 0x2e
+ 1011 00ee 00       		.byte	0
+ 1012 00ef 3F       		.uleb128 0x3f
+ 1013 00f0 19       		.uleb128 0x19
+ 1014 00f1 3C       		.uleb128 0x3c
+ 1015 00f2 19       		.uleb128 0x19
+ 1016 00f3 6E       		.uleb128 0x6e
+ 1017 00f4 0E       		.uleb128 0xe
+ 1018 00f5 03       		.uleb128 0x3
+ 1019 00f6 0E       		.uleb128 0xe
+ 1020 00f7 3A       		.uleb128 0x3a
+ 1021 00f8 0B       		.uleb128 0xb
+ 1022 00f9 3B       		.uleb128 0x3b
+ 1023 00fa 0B       		.uleb128 0xb
+ 1024 00fb 00       		.byte	0
+ 1025 00fc 00       		.byte	0
+ 1026 00fd 00       		.byte	0
+ 1027              		.section	.debug_loc,"",%progbits
+ 1028              	.Ldebug_loc0:
+ 1029              	.LLST0:
+ 1030 0000 60000000 		.4byte	.LVL11
+ 1031 0004 67000000 		.4byte	.LVL12-1
+ 1032 0008 0100     		.2byte	0x1
+ 1033 000a 50       		.byte	0x50
+ 1034 000b 74000000 		.4byte	.LVL14
+ 1035 000f 78000000 		.4byte	.LVL15
+ 1036 0013 0100     		.2byte	0x1
+ 1037 0015 50       		.byte	0x50
+ 1038 0016 78000000 		.4byte	.LVL15
+ 1039 001a 96000000 		.4byte	.LVL20
+ 1040 001e 0100     		.2byte	0x1
+ 1041 0020 54       		.byte	0x54
+ 1042 0021 96000000 		.4byte	.LVL20
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 21
+
+
+ 1043 0025 99000000 		.4byte	.LVL21-1
+ 1044 0029 0100     		.2byte	0x1
+ 1045 002b 50       		.byte	0x50
+ 1046 002c A8000000 		.4byte	.LVL24
+ 1047 0030 AC000000 		.4byte	.LVL25
+ 1048 0034 0100     		.2byte	0x1
+ 1049 0036 50       		.byte	0x50
+ 1050 0037 AC000000 		.4byte	.LVL25
+ 1051 003b F2000000 		.4byte	.LVL34
+ 1052 003f 0100     		.2byte	0x1
+ 1053 0041 54       		.byte	0x54
+ 1054 0042 00000000 		.4byte	0
+ 1055 0046 00000000 		.4byte	0
+ 1056              		.section	.debug_aranges,"",%progbits
+ 1057 0000 1C000000 		.4byte	0x1c
+ 1058 0004 0200     		.2byte	0x2
+ 1059 0006 00000000 		.4byte	.Ldebug_info0
+ 1060 000a 04       		.byte	0x4
+ 1061 000b 00       		.byte	0
+ 1062 000c 0000     		.2byte	0
+ 1063 000e 0000     		.2byte	0
+ 1064 0010 00000000 		.4byte	.LFB63
+ 1065 0014 38010000 		.4byte	.LFE63-.LFB63
+ 1066 0018 00000000 		.4byte	0
+ 1067 001c 00000000 		.4byte	0
+ 1068              		.section	.debug_ranges,"",%progbits
+ 1069              	.Ldebug_ranges0:
+ 1070 0000 00000000 		.4byte	.LFB63
+ 1071 0004 38010000 		.4byte	.LFE63
+ 1072 0008 00000000 		.4byte	0
+ 1073 000c 00000000 		.4byte	0
+ 1074              		.section	.debug_line,"",%progbits
+ 1075              	.Ldebug_line0:
+ 1076 0000 BE010000 		.section	.debug_str,"MS",%progbits,1
+ 1076      02008301 
+ 1076      00000201 
+ 1076      FB0E0D00 
+ 1076      01010101 
+ 1077              	.LASF26:
+ 1078 0000 4C43445F 		.ascii	"LCD_Char_2_PrintString\000"
+ 1078      43686172 
+ 1078      5F325F50 
+ 1078      72696E74 
+ 1078      53747269 
+ 1079              	.LASF9:
+ 1080 0017 5F5F696E 		.ascii	"__int32_t\000"
+ 1080      7433325F 
+ 1080      7400
+ 1081              	.LASF20:
+ 1082 0021 4C617374 		.ascii	"LastState\000"
+ 1082      53746174 
+ 1082      6500
+ 1083              	.LASF17:
+ 1084 002b 50335F30 		.ascii	"P3_0_Read\000"
+ 1084      5F526561 
+ 1084      6400
+ 1085              	.LASF12:
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 22
+
+
+ 1086 0035 666C6F61 		.ascii	"float\000"
+ 1086      7400
+ 1087              	.LASF37:
+ 1088 003b 636F756E 		.ascii	"counter\000"
+ 1088      74657200 
+ 1089              	.LASF1:
+ 1090 0043 756E7369 		.ascii	"unsigned char\000"
+ 1090      676E6564 
+ 1090      20636861 
+ 1090      7200
+ 1091              	.LASF33:
+ 1092 0051 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1092      43313120 
+ 1092      352E342E 
+ 1092      31203230 
+ 1092      31363036 
+ 1093 0084 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1093      20726576 
+ 1093      6973696F 
+ 1093      6E203233 
+ 1093      37373135 
+ 1094 00b7 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1094      66756E63 
+ 1094      74696F6E 
+ 1094      2D736563 
+ 1094      74696F6E 
+ 1095              	.LASF5:
+ 1096 00df 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1096      20756E73 
+ 1096      69676E65 
+ 1096      6420696E 
+ 1096      7400
+ 1097              	.LASF3:
+ 1098 00f1 73686F72 		.ascii	"short unsigned int\000"
+ 1098      7420756E 
+ 1098      7369676E 
+ 1098      65642069 
+ 1098      6E7400
+ 1099              	.LASF30:
+ 1100 0104 4C43445F 		.ascii	"LCD_Char_2_Start\000"
+ 1100      43686172 
+ 1100      5F325F53 
+ 1100      74617274 
+ 1100      00
+ 1101              	.LASF21:
+ 1102 0115 53746174 		.ascii	"State\000"
+ 1102      6500
+ 1103              	.LASF18:
+ 1104 011b 50335F31 		.ascii	"P3_1_Read\000"
+ 1104      5F526561 
+ 1104      6400
+ 1105              	.LASF19:
+ 1106 0125 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1106      52784275 
+ 1106      66666572 
+ 1106      00
+ 1107              	.LASF29:
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 23
+
+
+ 1108 0132 436C6F63 		.ascii	"Clock_2_Start\000"
+ 1108      6B5F325F 
+ 1108      53746172 
+ 1108      7400
+ 1109              	.LASF13:
+ 1110 0140 646F7562 		.ascii	"double\000"
+ 1110      6C6500
+ 1111              	.LASF35:
+ 1112 0147 433A5C55 		.ascii	"C:\\Users\\SWAPNIL\\Documents\\PSoC Creator\\Lab3_P"
+ 1112      73657273 
+ 1112      5C535741 
+ 1112      504E494C 
+ 1112      5C446F63 
+ 1113 0175 61727432 		.ascii	"art2\\Lab3_Part2.cydsn\000"
+ 1113      5C4C6162 
+ 1113      335F5061 
+ 1113      7274322E 
+ 1113      63796473 
+ 1114              	.LASF36:
+ 1115 018b 6D61696E 		.ascii	"main\000"
+ 1115      00
+ 1116              	.LASF11:
+ 1117 0190 75696E74 		.ascii	"uint16\000"
+ 1117      313600
+ 1118              	.LASF8:
+ 1119 0197 756E7369 		.ascii	"unsigned int\000"
+ 1119      676E6564 
+ 1119      20696E74 
+ 1119      00
+ 1120              	.LASF7:
+ 1121 01a4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1121      206C6F6E 
+ 1121      6720756E 
+ 1121      7369676E 
+ 1121      65642069 
+ 1122              	.LASF25:
+ 1123 01bb 4C43445F 		.ascii	"LCD_Char_2_Position\000"
+ 1123      43686172 
+ 1123      5F325F50 
+ 1123      6F736974 
+ 1123      696F6E00 
+ 1124              	.LASF24:
+ 1125 01cf 51756164 		.ascii	"QuadDec_2_GetCounter\000"
+ 1125      4465635F 
+ 1125      325F4765 
+ 1125      74436F75 
+ 1125      6E746572 
+ 1126              	.LASF32:
+ 1127 01e4 4C43445F 		.ascii	"LCD_Char_2_WriteControl\000"
+ 1127      43686172 
+ 1127      5F325F57 
+ 1127      72697465 
+ 1127      436F6E74 
+ 1128              	.LASF10:
+ 1129 01fc 696E7433 		.ascii	"int32_t\000"
+ 1129      325F7400 
+ 1130              	.LASF16:
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccrvtavZ.s 			page 24
+
+
+ 1131 0204 73697A65 		.ascii	"sizetype\000"
+ 1131      74797065 
+ 1131      00
+ 1132              	.LASF23:
+ 1133 020d 736F6674 		.ascii	"soft_count\000"
+ 1133      5F636F75 
+ 1133      6E7400
+ 1134              	.LASF6:
+ 1135 0218 6C6F6E67 		.ascii	"long long int\000"
+ 1135      206C6F6E 
+ 1135      6720696E 
+ 1135      7400
+ 1136              	.LASF34:
+ 1137 0226 6D61696E 		.ascii	"main.c\000"
+ 1137      2E6300
+ 1138              	.LASF14:
+ 1139 022d 63686172 		.ascii	"char\000"
+ 1139      00
+ 1140              	.LASF27:
+ 1141 0232 4C43445F 		.ascii	"LCD_Char_2_PrintU32Number\000"
+ 1141      43686172 
+ 1141      5F325F50 
+ 1141      72696E74 
+ 1141      5533324E 
+ 1142              	.LASF22:
+ 1143 024c 636F756E 		.ascii	"count\000"
+ 1143      7400
+ 1144              	.LASF2:
+ 1145 0252 73686F72 		.ascii	"short int\000"
+ 1145      7420696E 
+ 1145      7400
+ 1146              	.LASF4:
+ 1147 025c 6C6F6E67 		.ascii	"long int\000"
+ 1147      20696E74 
+ 1147      00
+ 1148              	.LASF15:
+ 1149 0265 6C6F6E67 		.ascii	"long double\000"
+ 1149      20646F75 
+ 1149      626C6500 
+ 1150              	.LASF0:
+ 1151 0271 7369676E 		.ascii	"signed char\000"
+ 1151      65642063 
+ 1151      68617200 
+ 1152              	.LASF31:
+ 1153 027d 43794465 		.ascii	"CyDelay\000"
+ 1153      6C617900 
+ 1154              	.LASF28:
+ 1155 0285 51756164 		.ascii	"QuadDec_2_Start\000"
+ 1155      4465635F 
+ 1155      325F5374 
+ 1155      61727400 
+ 1156              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

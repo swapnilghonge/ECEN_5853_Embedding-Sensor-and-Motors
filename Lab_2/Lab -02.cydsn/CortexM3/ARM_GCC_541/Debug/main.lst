@@ -1,0 +1,1541 @@
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2f
+  20              		.global	__aeabi_fdiv
+  21              		.global	__aeabi_fmul
+  22              		.global	__aeabi_f2iz
+  23              		.section	.text.main,"ax",%progbits
+  24              		.align	2
+  25              		.global	main
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	main, %function
+  29              	main:
+  30              	.LFB63:
+  31              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include "math.h"
+  14:main.c        **** #include "float.h"
+  15:main.c        **** 
+  16:main.c        **** int16 voltage_measured, rpm, voltage, back_emf,current_1;
+  17:main.c        **** float  back_emf_in_volts,current;
+  18:main.c        **** 
+  19:main.c        **** 
+  20:main.c        **** int main(void)
+  21:main.c        **** {
+  32              		.loc 1 21 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 2
+
+
+  37              		.cfi_def_cfa_offset 24
+  38              		.cfi_offset 4, -24
+  39              		.cfi_offset 5, -20
+  40              		.cfi_offset 6, -16
+  41              		.cfi_offset 7, -12
+  42              		.cfi_offset 8, -8
+  43              		.cfi_offset 14, -4
+  22:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  44              		.loc 1 22 0
+  45              		.syntax unified
+  46              	@ 22 "main.c" 1
+  47 0004 62B6     		CPSIE   i
+  48              	@ 0 "" 2
+  23:main.c        ****     ADC_SAR_1_Start();
+  49              		.loc 1 23 0
+  50              		.thumb
+  51              		.syntax unified
+  52 0006 FFF7FEFF 		bl	ADC_SAR_1_Start
+  53              	.LVL0:
+  24:main.c        ****     PGA_1_Start();
+  54              		.loc 1 24 0
+  55 000a FFF7FEFF 		bl	PGA_1_Start
+  56              	.LVL1:
+  25:main.c        ****     LCD_Start();
+  57              		.loc 1 25 0
+  58 000e FFF7FEFF 		bl	LCD_Start
+  59              	.LVL2:
+  26:main.c        ****     LCD_Position(0,0);
+  60              		.loc 1 26 0
+  61 0012 0021     		movs	r1, #0
+  62 0014 0846     		mov	r0, r1
+  63 0016 FFF7FEFF 		bl	LCD_Position
+  64              	.LVL3:
+  27:main.c        ****     LCD_PrintString("Back EMF Test");
+  65              		.loc 1 27 0
+  66 001a 5248     		ldr	r0, .L4
+  67 001c FFF7FEFF 		bl	LCD_PrintString
+  68              	.LVL4:
+  28:main.c        ****     CyDelay(2000);
+  69              		.loc 1 28 0
+  70 0020 4FF4FA60 		mov	r0, #2000
+  71 0024 FFF7FEFF 		bl	CyDelay
+  72              	.LVL5:
+  29:main.c        ****     LCD_Position(0,0);
+  73              		.loc 1 29 0
+  74 0028 0021     		movs	r1, #0
+  75 002a 0846     		mov	r0, r1
+  76 002c FFF7FEFF 		bl	LCD_Position
+  77              	.LVL6:
+  30:main.c        ****     LCD_ClearDisplay();
+  78              		.loc 1 30 0
+  79 0030 0120     		movs	r0, #1
+  80 0032 FFF7FEFF 		bl	LCD_WriteControl
+  81              	.LVL7:
+  82              	.L2:
+  83              	.LBB2:
+  31:main.c        ****     
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 3
+
+
+  32:main.c        **** 
+  33:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  34:main.c        **** 
+  35:main.c        ****     while(1)
+  36:main.c        ****     {
+  37:main.c        ****         /* Place your application code here. */
+  38:main.c        ****         
+  39:main.c        ****         P3_5_Write(1); //gate FET high
+  84              		.loc 1 39 0 discriminator 1
+  85 0036 0120     		movs	r0, #1
+  86 0038 FFF7FEFF 		bl	P3_5_Write
+  87              	.LVL8:
+  40:main.c        ****         
+  41:main.c        ****         CyDelay(500);
+  88              		.loc 1 41 0 discriminator 1
+  89 003c 4FF4FA70 		mov	r0, #500
+  90 0040 FFF7FEFF 		bl	CyDelay
+  91              	.LVL9:
+  42:main.c        ****         
+  43:main.c        ****         P3_5_Write(0); // gate FET low
+  92              		.loc 1 43 0 discriminator 1
+  93 0044 0020     		movs	r0, #0
+  94 0046 FFF7FEFF 		bl	P3_5_Write
+  95              	.LVL10:
+  44:main.c        ****         
+  45:main.c        ****         
+  46:main.c        ****         ADC_SAR_1_StartConvert();
+  96              		.loc 1 46 0 discriminator 1
+  97 004a FFF7FEFF 		bl	ADC_SAR_1_StartConvert
+  98              	.LVL11:
+  47:main.c        ****         ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+  99              		.loc 1 47 0 discriminator 1
+ 100 004e 0020     		movs	r0, #0
+ 101 0050 FFF7FEFF 		bl	ADC_SAR_1_IsEndConversion
+ 102              	.LVL12:
+  48:main.c        ****         voltage_measured = ADC_SAR_1_GetResult16();
+ 103              		.loc 1 48 0 discriminator 1
+ 104 0054 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
+ 105              	.LVL13:
+ 106 0058 434B     		ldr	r3, .L4+4
+ 107 005a 1880     		strh	r0, [r3]	@ movhi
+  49:main.c        ****         voltage = ADC_SAR_1_CountsTo_mVolts(voltage_measured);
+ 108              		.loc 1 49 0 discriminator 1
+ 109 005c FFF7FEFF 		bl	ADC_SAR_1_CountsTo_mVolts
+ 110              	.LVL14:
+ 111 0060 424B     		ldr	r3, .L4+8
+ 112 0062 1880     		strh	r0, [r3]	@ movhi
+  50:main.c        ****         
+  51:main.c        ****         /* Formulae used:
+  52:main.c        ****         Ke = rpm/back_emf
+  53:main.c        ****         V= (Istall- In/l)/R values refered from datasheet of the motor
+  54:main.c        ****          = (1.02-012)*5
+  55:main.c        ****             = 4 Volts
+  56:main.c        ****         Ke= 11000/4 =  2750*/
+  57:main.c        ****         
+  58:main.c        ****         back_emf = 450 - voltage;
+ 113              		.loc 1 58 0 discriminator 1
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 4
+
+
+ 114 0064 C0F5E170 		rsb	r0, r0, #450
+ 115 0068 00B2     		sxth	r0, r0
+ 116 006a 414E     		ldr	r6, .L4+12
+ 117 006c 3080     		strh	r0, [r6]	@ movhi
+  59:main.c        ****         back_emf_in_volts = (float)back_emf/100.0;
+ 118              		.loc 1 59 0 discriminator 1
+ 119 006e FFF7FEFF 		bl	__aeabi_i2f
+ 120              	.LVL15:
+ 121 0072 0446     		mov	r4, r0
+ 122 0074 3F49     		ldr	r1, .L4+16
+ 123 0076 FFF7FEFF 		bl	__aeabi_fdiv
+ 124              	.LVL16:
+ 125 007a 3F4B     		ldr	r3, .L4+20
+ 126 007c 1860     		str	r0, [r3]	@ float
+  60:main.c        ****         rpm = 2623 * back_emf_in_volts;
+ 127              		.loc 1 60 0 discriminator 1
+ 128 007e 3F49     		ldr	r1, .L4+24
+ 129 0080 FFF7FEFF 		bl	__aeabi_fmul
+ 130              	.LVL17:
+ 131 0084 3E4F     		ldr	r7, .L4+28
+ 132 0086 FFF7FEFF 		bl	__aeabi_f2iz
+ 133              	.LVL18:
+ 134 008a 3880     		strh	r0, [r7]	@ movhi
+ 135              	.LVL19:
+  61:main.c        ****         
+  62:main.c        ****         int16 voltage_motor = 450 - voltage;
+  63:main.c        ****         current = (float)voltage_motor / 5;
+ 136              		.loc 1 63 0 discriminator 1
+ 137 008c 3D49     		ldr	r1, .L4+32
+ 138 008e 2046     		mov	r0, r4
+ 139 0090 FFF7FEFF 		bl	__aeabi_fdiv
+ 140              	.LVL20:
+ 141 0094 3C4B     		ldr	r3, .L4+36
+ 142 0096 1860     		str	r0, [r3]	@ float
+  64:main.c        ****         current_1= current;
+ 143              		.loc 1 64 0 discriminator 1
+ 144 0098 3C4D     		ldr	r5, .L4+40
+ 145 009a FFF7FEFF 		bl	__aeabi_f2iz
+ 146              	.LVL21:
+ 147 009e 2880     		strh	r0, [r5]	@ movhi
+  65:main.c        ****         
+  66:main.c        ****         P3_6_Write(1);
+ 148              		.loc 1 66 0 discriminator 1
+ 149 00a0 0120     		movs	r0, #1
+ 150 00a2 FFF7FEFF 		bl	P3_6_Write
+ 151              	.LVL22:
+  67:main.c        ****         /* Display values on LCD*/
+  68:main.c        ****         LCD_Position(0,0);
+ 152              		.loc 1 68 0 discriminator 1
+ 153 00a6 0021     		movs	r1, #0
+ 154 00a8 0846     		mov	r0, r1
+ 155 00aa FFF7FEFF 		bl	LCD_Position
+ 156              	.LVL23:
+  69:main.c        ****         LCD_PrintString("Vb=    ");
+ 157              		.loc 1 69 0 discriminator 1
+ 158 00ae 3848     		ldr	r0, .L4+44
+ 159 00b0 FFF7FEFF 		bl	LCD_PrintString
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 5
+
+
+ 160              	.LVL24:
+  70:main.c        ****         LCD_Position(0,2);
+ 161              		.loc 1 70 0 discriminator 1
+ 162 00b4 0221     		movs	r1, #2
+ 163 00b6 0020     		movs	r0, #0
+ 164 00b8 FFF7FEFF 		bl	LCD_Position
+ 165              	.LVL25:
+  71:main.c        ****         LCD_PrintNumber(back_emf/100);
+ 166              		.loc 1 71 0 discriminator 1
+ 167 00bc B6F90030 		ldrsh	r3, [r6]
+ 168 00c0 344C     		ldr	r4, .L4+48
+ 169 00c2 84FB0320 		smull	r2, r0, r4, r3
+ 170 00c6 DB17     		asrs	r3, r3, #31
+ 171 00c8 C3EB6010 		rsb	r0, r3, r0, asr #5
+ 172 00cc 80B2     		uxth	r0, r0
+ 173 00ce FFF7FEFF 		bl	LCD_PrintU32Number
+ 174              	.LVL26:
+  72:main.c        ****         LCD_Position(0,3);
+ 175              		.loc 1 72 0 discriminator 1
+ 176 00d2 0321     		movs	r1, #3
+ 177 00d4 0020     		movs	r0, #0
+ 178 00d6 FFF7FEFF 		bl	LCD_Position
+ 179              	.LVL27:
+  73:main.c        ****         LCD_PrintString(".");             
+ 180              		.loc 1 73 0 discriminator 1
+ 181 00da DFF8C480 		ldr	r8, .L4+60
+ 182 00de 4046     		mov	r0, r8
+ 183 00e0 FFF7FEFF 		bl	LCD_PrintString
+ 184              	.LVL28:
+  74:main.c        ****         LCD_PrintNumber(back_emf%100);
+ 185              		.loc 1 74 0 discriminator 1
+ 186 00e4 B6F90020 		ldrsh	r2, [r6]
+ 187 00e8 84FB0230 		smull	r3, r0, r4, r2
+ 188 00ec D317     		asrs	r3, r2, #31
+ 189 00ee C3EB6010 		rsb	r0, r3, r0, asr #5
+ 190 00f2 6426     		movs	r6, #100
+ 191 00f4 06FB1020 		mls	r0, r6, r0, r2
+ 192 00f8 80B2     		uxth	r0, r0
+ 193 00fa FFF7FEFF 		bl	LCD_PrintU32Number
+ 194              	.LVL29:
+  75:main.c        ****       
+  76:main.c        ****         // display value of rpm
+  77:main.c        ****         LCD_Position(1,0);
+ 195              		.loc 1 77 0 discriminator 1
+ 196 00fe 0021     		movs	r1, #0
+ 197 0100 0120     		movs	r0, #1
+ 198 0102 FFF7FEFF 		bl	LCD_Position
+ 199              	.LVL30:
+  78:main.c        ****         LCD_PrintString("RPM=      ");
+ 200              		.loc 1 78 0 discriminator 1
+ 201 0106 2448     		ldr	r0, .L4+52
+ 202 0108 FFF7FEFF 		bl	LCD_PrintString
+ 203              	.LVL31:
+  79:main.c        ****         LCD_Position(1,5);
+ 204              		.loc 1 79 0 discriminator 1
+ 205 010c 0521     		movs	r1, #5
+ 206 010e 0120     		movs	r0, #1
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 6
+
+
+ 207 0110 FFF7FEFF 		bl	LCD_Position
+ 208              	.LVL32:
+  80:main.c        ****         LCD_PrintNumber(rpm);
+ 209              		.loc 1 80 0 discriminator 1
+ 210 0114 3888     		ldrh	r0, [r7]
+ 211 0116 FFF7FEFF 		bl	LCD_PrintU32Number
+ 212              	.LVL33:
+  81:main.c        ****         
+  82:main.c        ****         
+  83:main.c        ****         //display value of Current
+  84:main.c        ****         LCD_Position(0,7);
+ 213              		.loc 1 84 0 discriminator 1
+ 214 011a 0721     		movs	r1, #7
+ 215 011c 0020     		movs	r0, #0
+ 216 011e FFF7FEFF 		bl	LCD_Position
+ 217              	.LVL34:
+  85:main.c        ****         LCD_PrintString("I=  mA    ");
+ 218              		.loc 1 85 0 discriminator 1
+ 219 0122 1E48     		ldr	r0, .L4+56
+ 220 0124 FFF7FEFF 		bl	LCD_PrintString
+ 221              	.LVL35:
+  86:main.c        ****         LCD_Position(0,9);
+ 222              		.loc 1 86 0 discriminator 1
+ 223 0128 0921     		movs	r1, #9
+ 224 012a 0020     		movs	r0, #0
+ 225 012c FFF7FEFF 		bl	LCD_Position
+ 226              	.LVL36:
+  87:main.c        ****         LCD_PrintNumber(current_1);
+ 227              		.loc 1 87 0 discriminator 1
+ 228 0130 2888     		ldrh	r0, [r5]
+ 229 0132 FFF7FEFF 		bl	LCD_PrintU32Number
+ 230              	.LVL37:
+  88:main.c        ****         LCD_Position(0,11);
+ 231              		.loc 1 88 0 discriminator 1
+ 232 0136 0B21     		movs	r1, #11
+ 233 0138 0020     		movs	r0, #0
+ 234 013a FFF7FEFF 		bl	LCD_Position
+ 235              	.LVL38:
+  89:main.c        ****         LCD_PrintString(".");
+ 236              		.loc 1 89 0 discriminator 1
+ 237 013e 4046     		mov	r0, r8
+ 238 0140 FFF7FEFF 		bl	LCD_PrintString
+ 239              	.LVL39:
+  90:main.c        ****         LCD_PrintNumber(current_1%100);
+ 240              		.loc 1 90 0 discriminator 1
+ 241 0144 B5F90020 		ldrsh	r2, [r5]
+ 242 0148 84FB0230 		smull	r3, r0, r4, r2
+ 243 014c D317     		asrs	r3, r2, #31
+ 244 014e C3EB6010 		rsb	r0, r3, r0, asr #5
+ 245 0152 06FB1020 		mls	r0, r6, r0, r2
+ 246 0156 80B2     		uxth	r0, r0
+ 247 0158 FFF7FEFF 		bl	LCD_PrintU32Number
+ 248              	.LVL40:
+  91:main.c        ****         P3_6_Write(0);
+ 249              		.loc 1 91 0 discriminator 1
+ 250 015c 0020     		movs	r0, #0
+ 251 015e FFF7FEFF 		bl	P3_6_Write
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 7
+
+
+ 252              	.LVL41:
+ 253 0162 68E7     		b	.L2
+ 254              	.L5:
+ 255              		.align	2
+ 256              	.L4:
+ 257 0164 00000000 		.word	.LC0
+ 258 0168 00000000 		.word	voltage_measured
+ 259 016c 00000000 		.word	voltage
+ 260 0170 00000000 		.word	back_emf
+ 261 0174 0000C842 		.word	1120403456
+ 262 0178 00000000 		.word	back_emf_in_volts
+ 263 017c 00F02345 		.word	1159983104
+ 264 0180 00000000 		.word	rpm
+ 265 0184 0000A040 		.word	1084227584
+ 266 0188 00000000 		.word	current
+ 267 018c 00000000 		.word	current_1
+ 268 0190 10000000 		.word	.LC1
+ 269 0194 1F85EB51 		.word	1374389535
+ 270 0198 1C000000 		.word	.LC3
+ 271 019c 28000000 		.word	.LC4
+ 272 01a0 18000000 		.word	.LC2
+ 273              	.LBE2:
+ 274              		.cfi_endproc
+ 275              	.LFE63:
+ 276              		.size	main, .-main
+ 277              		.comm	current,4,4
+ 278              		.comm	back_emf_in_volts,4,4
+ 279              		.comm	current_1,2,2
+ 280              		.comm	back_emf,2,2
+ 281              		.comm	voltage,2,2
+ 282              		.comm	rpm,2,2
+ 283              		.comm	voltage_measured,2,2
+ 284              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 285              		.align	2
+ 286              	.LC0:
+ 287 0000 4261636B 		.ascii	"Back EMF Test\000"
+ 287      20454D46 
+ 287      20546573 
+ 287      7400
+ 288 000e 0000     		.space	2
+ 289              	.LC1:
+ 290 0010 56623D20 		.ascii	"Vb=    \000"
+ 290      20202000 
+ 291              	.LC2:
+ 292 0018 2E00     		.ascii	".\000"
+ 293 001a 0000     		.space	2
+ 294              	.LC3:
+ 295 001c 52504D3D 		.ascii	"RPM=      \000"
+ 295      20202020 
+ 295      202000
+ 296 0027 00       		.space	1
+ 297              	.LC4:
+ 298 0028 493D2020 		.ascii	"I=  mA    \000"
+ 298      6D412020 
+ 298      202000
+ 299              		.text
+ 300              	.Letext0:
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 8
+
+
+ 301              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 302              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 303              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 304              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 305              		.file 6 "Generated_Source\\PSoC5/P3_5.h"
+ 306              		.file 7 "Generated_Source\\PSoC5/CyLib.h"
+ 307              		.file 8 "Generated_Source\\PSoC5/ADC_SAR_1.h"
+ 308              		.file 9 "Generated_Source\\PSoC5/P3_6.h"
+ 309              		.file 10 "Generated_Source\\PSoC5/LCD.h"
+ 310              		.file 11 "Generated_Source\\PSoC5/PGA_1.h"
+ 311              		.section	.debug_info,"",%progbits
+ 312              	.Ldebug_info0:
+ 313 0000 79040000 		.4byte	0x479
+ 314 0004 0400     		.2byte	0x4
+ 315 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 316 000a 04       		.byte	0x4
+ 317 000b 01       		.uleb128 0x1
+ 318 000c A8000000 		.4byte	.LASF39
+ 319 0010 0C       		.byte	0xc
+ 320 0011 49020000 		.4byte	.LASF40
+ 321 0015 60020000 		.4byte	.LASF41
+ 322 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 323 001d 00000000 		.4byte	0
+ 324 0021 00000000 		.4byte	.Ldebug_line0
+ 325 0025 02       		.uleb128 0x2
+ 326 0026 01       		.byte	0x1
+ 327 0027 06       		.byte	0x6
+ 328 0028 C9020000 		.4byte	.LASF0
+ 329 002c 02       		.uleb128 0x2
+ 330 002d 01       		.byte	0x1
+ 331 002e 08       		.byte	0x8
+ 332 002f 9A000000 		.4byte	.LASF1
+ 333 0033 02       		.uleb128 0x2
+ 334 0034 02       		.byte	0x2
+ 335 0035 05       		.byte	0x5
+ 336 0036 8F010000 		.4byte	.LASF2
+ 337 003a 02       		.uleb128 0x2
+ 338 003b 02       		.byte	0x2
+ 339 003c 07       		.byte	0x7
+ 340 003d 3C000000 		.4byte	.LASF3
+ 341 0041 03       		.uleb128 0x3
+ 342 0042 32000000 		.4byte	.LASF9
+ 343 0046 02       		.byte	0x2
+ 344 0047 3F       		.byte	0x3f
+ 345 0048 4C000000 		.4byte	0x4c
+ 346 004c 02       		.uleb128 0x2
+ 347 004d 04       		.byte	0x4
+ 348 004e 05       		.byte	0x5
+ 349 004f B4020000 		.4byte	.LASF4
+ 350 0053 02       		.uleb128 0x2
+ 351 0054 04       		.byte	0x4
+ 352 0055 07       		.byte	0x7
+ 353 0056 4A010000 		.4byte	.LASF5
+ 354 005a 02       		.uleb128 0x2
+ 355 005b 08       		.byte	0x8
+ 356 005c 05       		.byte	0x5
+ 357 005d 3B020000 		.4byte	.LASF6
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 9
+
+
+ 358 0061 02       		.uleb128 0x2
+ 359 0062 08       		.byte	0x8
+ 360 0063 07       		.byte	0x7
+ 361 0064 CB010000 		.4byte	.LASF7
+ 362 0068 04       		.uleb128 0x4
+ 363 0069 04       		.byte	0x4
+ 364 006a 05       		.byte	0x5
+ 365 006b 696E7400 		.ascii	"int\000"
+ 366 006f 02       		.uleb128 0x2
+ 367 0070 04       		.byte	0x4
+ 368 0071 07       		.byte	0x7
+ 369 0072 B5010000 		.4byte	.LASF8
+ 370 0076 03       		.uleb128 0x3
+ 371 0077 14020000 		.4byte	.LASF10
+ 372 007b 03       		.byte	0x3
+ 373 007c 2C       		.byte	0x2c
+ 374 007d 41000000 		.4byte	0x41
+ 375 0081 05       		.uleb128 0x5
+ 376 0082 A9010000 		.4byte	.LASF11
+ 377 0086 04       		.byte	0x4
+ 378 0087 E901     		.2byte	0x1e9
+ 379 0089 3A000000 		.4byte	0x3a
+ 380 008d 05       		.uleb128 0x5
+ 381 008e 44010000 		.4byte	.LASF12
+ 382 0092 04       		.byte	0x4
+ 383 0093 EC01     		.2byte	0x1ec
+ 384 0095 33000000 		.4byte	0x33
+ 385 0099 02       		.uleb128 0x2
+ 386 009a 04       		.byte	0x4
+ 387 009b 04       		.byte	0x4
+ 388 009c 7A000000 		.4byte	.LASF13
+ 389 00a0 02       		.uleb128 0x2
+ 390 00a1 08       		.byte	0x8
+ 391 00a2 04       		.byte	0x4
+ 392 00a3 88010000 		.4byte	.LASF14
+ 393 00a7 02       		.uleb128 0x2
+ 394 00a8 01       		.byte	0x1
+ 395 00a9 08       		.byte	0x8
+ 396 00aa 50020000 		.4byte	.LASF15
+ 397 00ae 02       		.uleb128 0x2
+ 398 00af 08       		.byte	0x8
+ 399 00b0 04       		.byte	0x4
+ 400 00b1 BD020000 		.4byte	.LASF16
+ 401 00b5 02       		.uleb128 0x2
+ 402 00b6 04       		.byte	0x4
+ 403 00b7 07       		.byte	0x7
+ 404 00b8 1C020000 		.4byte	.LASF17
+ 405 00bc 06       		.uleb128 0x6
+ 406 00bd B0010000 		.4byte	.LASF42
+ 407 00c1 01       		.byte	0x1
+ 408 00c2 14       		.byte	0x14
+ 409 00c3 68000000 		.4byte	0x68
+ 410 00c7 00000000 		.4byte	.LFB63
+ 411 00cb A4010000 		.4byte	.LFE63-.LFB63
+ 412 00cf 01       		.uleb128 0x1
+ 413 00d0 9C       		.byte	0x9c
+ 414 00d1 5A030000 		.4byte	0x35a
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 10
+
+
+ 415 00d5 07       		.uleb128 0x7
+ 416 00d6 36000000 		.4byte	.LBB2
+ 417 00da 6E010000 		.4byte	.LBE2-.LBB2
+ 418 00de D3020000 		.4byte	0x2d3
+ 419 00e2 08       		.uleb128 0x8
+ 420 00e3 36010000 		.4byte	.LASF43
+ 421 00e7 01       		.byte	0x1
+ 422 00e8 3E       		.byte	0x3e
+ 423 00e9 8D000000 		.4byte	0x8d
+ 424 00ed 09       		.uleb128 0x9
+ 425 00ee 3C000000 		.4byte	.LVL8
+ 426 00f2 E2030000 		.4byte	0x3e2
+ 427 00f6 00010000 		.4byte	0x100
+ 428 00fa 0A       		.uleb128 0xa
+ 429 00fb 01       		.uleb128 0x1
+ 430 00fc 50       		.byte	0x50
+ 431 00fd 01       		.uleb128 0x1
+ 432 00fe 31       		.byte	0x31
+ 433 00ff 00       		.byte	0
+ 434 0100 09       		.uleb128 0x9
+ 435 0101 44000000 		.4byte	.LVL9
+ 436 0105 ED030000 		.4byte	0x3ed
+ 437 0109 15010000 		.4byte	0x115
+ 438 010d 0A       		.uleb128 0xa
+ 439 010e 01       		.uleb128 0x1
+ 440 010f 50       		.byte	0x50
+ 441 0110 03       		.uleb128 0x3
+ 442 0111 0A       		.byte	0xa
+ 443 0112 F401     		.2byte	0x1f4
+ 444 0114 00       		.byte	0
+ 445 0115 09       		.uleb128 0x9
+ 446 0116 4A000000 		.4byte	.LVL10
+ 447 011a E2030000 		.4byte	0x3e2
+ 448 011e 28010000 		.4byte	0x128
+ 449 0122 0A       		.uleb128 0xa
+ 450 0123 01       		.uleb128 0x1
+ 451 0124 50       		.byte	0x50
+ 452 0125 01       		.uleb128 0x1
+ 453 0126 30       		.byte	0x30
+ 454 0127 00       		.byte	0
+ 455 0128 0B       		.uleb128 0xb
+ 456 0129 4E000000 		.4byte	.LVL11
+ 457 012d F8030000 		.4byte	0x3f8
+ 458 0131 09       		.uleb128 0x9
+ 459 0132 54000000 		.4byte	.LVL12
+ 460 0136 03040000 		.4byte	0x403
+ 461 013a 44010000 		.4byte	0x144
+ 462 013e 0A       		.uleb128 0xa
+ 463 013f 01       		.uleb128 0x1
+ 464 0140 50       		.byte	0x50
+ 465 0141 01       		.uleb128 0x1
+ 466 0142 30       		.byte	0x30
+ 467 0143 00       		.byte	0
+ 468 0144 0B       		.uleb128 0xb
+ 469 0145 58000000 		.4byte	.LVL13
+ 470 0149 0E040000 		.4byte	0x40e
+ 471 014d 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 11
+
+
+ 472 014e 60000000 		.4byte	.LVL14
+ 473 0152 19040000 		.4byte	0x419
+ 474 0156 09       		.uleb128 0x9
+ 475 0157 A6000000 		.4byte	.LVL22
+ 476 015b 24040000 		.4byte	0x424
+ 477 015f 69010000 		.4byte	0x169
+ 478 0163 0A       		.uleb128 0xa
+ 479 0164 01       		.uleb128 0x1
+ 480 0165 50       		.byte	0x50
+ 481 0166 01       		.uleb128 0x1
+ 482 0167 31       		.byte	0x31
+ 483 0168 00       		.byte	0
+ 484 0169 09       		.uleb128 0x9
+ 485 016a AE000000 		.4byte	.LVL23
+ 486 016e 2F040000 		.4byte	0x42f
+ 487 0172 81010000 		.4byte	0x181
+ 488 0176 0A       		.uleb128 0xa
+ 489 0177 01       		.uleb128 0x1
+ 490 0178 50       		.byte	0x50
+ 491 0179 01       		.uleb128 0x1
+ 492 017a 30       		.byte	0x30
+ 493 017b 0A       		.uleb128 0xa
+ 494 017c 01       		.uleb128 0x1
+ 495 017d 51       		.byte	0x51
+ 496 017e 01       		.uleb128 0x1
+ 497 017f 30       		.byte	0x30
+ 498 0180 00       		.byte	0
+ 499 0181 09       		.uleb128 0x9
+ 500 0182 B4000000 		.4byte	.LVL24
+ 501 0186 3A040000 		.4byte	0x43a
+ 502 018a 98010000 		.4byte	0x198
+ 503 018e 0A       		.uleb128 0xa
+ 504 018f 01       		.uleb128 0x1
+ 505 0190 50       		.byte	0x50
+ 506 0191 05       		.uleb128 0x5
+ 507 0192 03       		.byte	0x3
+ 508 0193 10000000 		.4byte	.LC1
+ 509 0197 00       		.byte	0
+ 510 0198 09       		.uleb128 0x9
+ 511 0199 BC000000 		.4byte	.LVL25
+ 512 019d 2F040000 		.4byte	0x42f
+ 513 01a1 B0010000 		.4byte	0x1b0
+ 514 01a5 0A       		.uleb128 0xa
+ 515 01a6 01       		.uleb128 0x1
+ 516 01a7 50       		.byte	0x50
+ 517 01a8 01       		.uleb128 0x1
+ 518 01a9 30       		.byte	0x30
+ 519 01aa 0A       		.uleb128 0xa
+ 520 01ab 01       		.uleb128 0x1
+ 521 01ac 51       		.byte	0x51
+ 522 01ad 01       		.uleb128 0x1
+ 523 01ae 32       		.byte	0x32
+ 524 01af 00       		.byte	0
+ 525 01b0 0B       		.uleb128 0xb
+ 526 01b1 D2000000 		.4byte	.LVL26
+ 527 01b5 45040000 		.4byte	0x445
+ 528 01b9 09       		.uleb128 0x9
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 12
+
+
+ 529 01ba DA000000 		.4byte	.LVL27
+ 530 01be 2F040000 		.4byte	0x42f
+ 531 01c2 D1010000 		.4byte	0x1d1
+ 532 01c6 0A       		.uleb128 0xa
+ 533 01c7 01       		.uleb128 0x1
+ 534 01c8 50       		.byte	0x50
+ 535 01c9 01       		.uleb128 0x1
+ 536 01ca 30       		.byte	0x30
+ 537 01cb 0A       		.uleb128 0xa
+ 538 01cc 01       		.uleb128 0x1
+ 539 01cd 51       		.byte	0x51
+ 540 01ce 01       		.uleb128 0x1
+ 541 01cf 33       		.byte	0x33
+ 542 01d0 00       		.byte	0
+ 543 01d1 09       		.uleb128 0x9
+ 544 01d2 E4000000 		.4byte	.LVL28
+ 545 01d6 3A040000 		.4byte	0x43a
+ 546 01da E5010000 		.4byte	0x1e5
+ 547 01de 0A       		.uleb128 0xa
+ 548 01df 01       		.uleb128 0x1
+ 549 01e0 50       		.byte	0x50
+ 550 01e1 02       		.uleb128 0x2
+ 551 01e2 78       		.byte	0x78
+ 552 01e3 00       		.sleb128 0
+ 553 01e4 00       		.byte	0
+ 554 01e5 0B       		.uleb128 0xb
+ 555 01e6 FE000000 		.4byte	.LVL29
+ 556 01ea 45040000 		.4byte	0x445
+ 557 01ee 09       		.uleb128 0x9
+ 558 01ef 06010000 		.4byte	.LVL30
+ 559 01f3 2F040000 		.4byte	0x42f
+ 560 01f7 06020000 		.4byte	0x206
+ 561 01fb 0A       		.uleb128 0xa
+ 562 01fc 01       		.uleb128 0x1
+ 563 01fd 50       		.byte	0x50
+ 564 01fe 01       		.uleb128 0x1
+ 565 01ff 31       		.byte	0x31
+ 566 0200 0A       		.uleb128 0xa
+ 567 0201 01       		.uleb128 0x1
+ 568 0202 51       		.byte	0x51
+ 569 0203 01       		.uleb128 0x1
+ 570 0204 30       		.byte	0x30
+ 571 0205 00       		.byte	0
+ 572 0206 09       		.uleb128 0x9
+ 573 0207 0C010000 		.4byte	.LVL31
+ 574 020b 3A040000 		.4byte	0x43a
+ 575 020f 1D020000 		.4byte	0x21d
+ 576 0213 0A       		.uleb128 0xa
+ 577 0214 01       		.uleb128 0x1
+ 578 0215 50       		.byte	0x50
+ 579 0216 05       		.uleb128 0x5
+ 580 0217 03       		.byte	0x3
+ 581 0218 1C000000 		.4byte	.LC3
+ 582 021c 00       		.byte	0
+ 583 021d 09       		.uleb128 0x9
+ 584 021e 14010000 		.4byte	.LVL32
+ 585 0222 2F040000 		.4byte	0x42f
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 13
+
+
+ 586 0226 35020000 		.4byte	0x235
+ 587 022a 0A       		.uleb128 0xa
+ 588 022b 01       		.uleb128 0x1
+ 589 022c 50       		.byte	0x50
+ 590 022d 01       		.uleb128 0x1
+ 591 022e 31       		.byte	0x31
+ 592 022f 0A       		.uleb128 0xa
+ 593 0230 01       		.uleb128 0x1
+ 594 0231 51       		.byte	0x51
+ 595 0232 01       		.uleb128 0x1
+ 596 0233 35       		.byte	0x35
+ 597 0234 00       		.byte	0
+ 598 0235 0B       		.uleb128 0xb
+ 599 0236 1A010000 		.4byte	.LVL33
+ 600 023a 45040000 		.4byte	0x445
+ 601 023e 09       		.uleb128 0x9
+ 602 023f 22010000 		.4byte	.LVL34
+ 603 0243 2F040000 		.4byte	0x42f
+ 604 0247 56020000 		.4byte	0x256
+ 605 024b 0A       		.uleb128 0xa
+ 606 024c 01       		.uleb128 0x1
+ 607 024d 50       		.byte	0x50
+ 608 024e 01       		.uleb128 0x1
+ 609 024f 30       		.byte	0x30
+ 610 0250 0A       		.uleb128 0xa
+ 611 0251 01       		.uleb128 0x1
+ 612 0252 51       		.byte	0x51
+ 613 0253 01       		.uleb128 0x1
+ 614 0254 37       		.byte	0x37
+ 615 0255 00       		.byte	0
+ 616 0256 09       		.uleb128 0x9
+ 617 0257 28010000 		.4byte	.LVL35
+ 618 025b 3A040000 		.4byte	0x43a
+ 619 025f 6D020000 		.4byte	0x26d
+ 620 0263 0A       		.uleb128 0xa
+ 621 0264 01       		.uleb128 0x1
+ 622 0265 50       		.byte	0x50
+ 623 0266 05       		.uleb128 0x5
+ 624 0267 03       		.byte	0x3
+ 625 0268 28000000 		.4byte	.LC4
+ 626 026c 00       		.byte	0
+ 627 026d 09       		.uleb128 0x9
+ 628 026e 30010000 		.4byte	.LVL36
+ 629 0272 2F040000 		.4byte	0x42f
+ 630 0276 85020000 		.4byte	0x285
+ 631 027a 0A       		.uleb128 0xa
+ 632 027b 01       		.uleb128 0x1
+ 633 027c 50       		.byte	0x50
+ 634 027d 01       		.uleb128 0x1
+ 635 027e 30       		.byte	0x30
+ 636 027f 0A       		.uleb128 0xa
+ 637 0280 01       		.uleb128 0x1
+ 638 0281 51       		.byte	0x51
+ 639 0282 01       		.uleb128 0x1
+ 640 0283 39       		.byte	0x39
+ 641 0284 00       		.byte	0
+ 642 0285 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 14
+
+
+ 643 0286 36010000 		.4byte	.LVL37
+ 644 028a 45040000 		.4byte	0x445
+ 645 028e 09       		.uleb128 0x9
+ 646 028f 3E010000 		.4byte	.LVL38
+ 647 0293 2F040000 		.4byte	0x42f
+ 648 0297 A6020000 		.4byte	0x2a6
+ 649 029b 0A       		.uleb128 0xa
+ 650 029c 01       		.uleb128 0x1
+ 651 029d 50       		.byte	0x50
+ 652 029e 01       		.uleb128 0x1
+ 653 029f 30       		.byte	0x30
+ 654 02a0 0A       		.uleb128 0xa
+ 655 02a1 01       		.uleb128 0x1
+ 656 02a2 51       		.byte	0x51
+ 657 02a3 01       		.uleb128 0x1
+ 658 02a4 3B       		.byte	0x3b
+ 659 02a5 00       		.byte	0
+ 660 02a6 09       		.uleb128 0x9
+ 661 02a7 44010000 		.4byte	.LVL39
+ 662 02ab 3A040000 		.4byte	0x43a
+ 663 02af BA020000 		.4byte	0x2ba
+ 664 02b3 0A       		.uleb128 0xa
+ 665 02b4 01       		.uleb128 0x1
+ 666 02b5 50       		.byte	0x50
+ 667 02b6 02       		.uleb128 0x2
+ 668 02b7 78       		.byte	0x78
+ 669 02b8 00       		.sleb128 0
+ 670 02b9 00       		.byte	0
+ 671 02ba 0B       		.uleb128 0xb
+ 672 02bb 5C010000 		.4byte	.LVL40
+ 673 02bf 45040000 		.4byte	0x445
+ 674 02c3 0C       		.uleb128 0xc
+ 675 02c4 62010000 		.4byte	.LVL41
+ 676 02c8 24040000 		.4byte	0x424
+ 677 02cc 0A       		.uleb128 0xa
+ 678 02cd 01       		.uleb128 0x1
+ 679 02ce 50       		.byte	0x50
+ 680 02cf 01       		.uleb128 0x1
+ 681 02d0 30       		.byte	0x30
+ 682 02d1 00       		.byte	0
+ 683 02d2 00       		.byte	0
+ 684 02d3 0B       		.uleb128 0xb
+ 685 02d4 0A000000 		.4byte	.LVL0
+ 686 02d8 50040000 		.4byte	0x450
+ 687 02dc 0B       		.uleb128 0xb
+ 688 02dd 0E000000 		.4byte	.LVL1
+ 689 02e1 5B040000 		.4byte	0x45b
+ 690 02e5 0B       		.uleb128 0xb
+ 691 02e6 12000000 		.4byte	.LVL2
+ 692 02ea 66040000 		.4byte	0x466
+ 693 02ee 09       		.uleb128 0x9
+ 694 02ef 1A000000 		.4byte	.LVL3
+ 695 02f3 2F040000 		.4byte	0x42f
+ 696 02f7 06030000 		.4byte	0x306
+ 697 02fb 0A       		.uleb128 0xa
+ 698 02fc 01       		.uleb128 0x1
+ 699 02fd 50       		.byte	0x50
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 15
+
+
+ 700 02fe 01       		.uleb128 0x1
+ 701 02ff 30       		.byte	0x30
+ 702 0300 0A       		.uleb128 0xa
+ 703 0301 01       		.uleb128 0x1
+ 704 0302 51       		.byte	0x51
+ 705 0303 01       		.uleb128 0x1
+ 706 0304 30       		.byte	0x30
+ 707 0305 00       		.byte	0
+ 708 0306 09       		.uleb128 0x9
+ 709 0307 20000000 		.4byte	.LVL4
+ 710 030b 3A040000 		.4byte	0x43a
+ 711 030f 1D030000 		.4byte	0x31d
+ 712 0313 0A       		.uleb128 0xa
+ 713 0314 01       		.uleb128 0x1
+ 714 0315 50       		.byte	0x50
+ 715 0316 05       		.uleb128 0x5
+ 716 0317 03       		.byte	0x3
+ 717 0318 00000000 		.4byte	.LC0
+ 718 031c 00       		.byte	0
+ 719 031d 09       		.uleb128 0x9
+ 720 031e 28000000 		.4byte	.LVL5
+ 721 0322 ED030000 		.4byte	0x3ed
+ 722 0326 32030000 		.4byte	0x332
+ 723 032a 0A       		.uleb128 0xa
+ 724 032b 01       		.uleb128 0x1
+ 725 032c 50       		.byte	0x50
+ 726 032d 03       		.uleb128 0x3
+ 727 032e 0A       		.byte	0xa
+ 728 032f D007     		.2byte	0x7d0
+ 729 0331 00       		.byte	0
+ 730 0332 09       		.uleb128 0x9
+ 731 0333 30000000 		.4byte	.LVL6
+ 732 0337 2F040000 		.4byte	0x42f
+ 733 033b 4A030000 		.4byte	0x34a
+ 734 033f 0A       		.uleb128 0xa
+ 735 0340 01       		.uleb128 0x1
+ 736 0341 50       		.byte	0x50
+ 737 0342 01       		.uleb128 0x1
+ 738 0343 30       		.byte	0x30
+ 739 0344 0A       		.uleb128 0xa
+ 740 0345 01       		.uleb128 0x1
+ 741 0346 51       		.byte	0x51
+ 742 0347 01       		.uleb128 0x1
+ 743 0348 30       		.byte	0x30
+ 744 0349 00       		.byte	0
+ 745 034a 0C       		.uleb128 0xc
+ 746 034b 36000000 		.4byte	.LVL7
+ 747 034f 71040000 		.4byte	0x471
+ 748 0353 0A       		.uleb128 0xa
+ 749 0354 01       		.uleb128 0x1
+ 750 0355 50       		.byte	0x50
+ 751 0356 01       		.uleb128 0x1
+ 752 0357 31       		.byte	0x31
+ 753 0358 00       		.byte	0
+ 754 0359 00       		.byte	0
+ 755 035a 0D       		.uleb128 0xd
+ 756 035b 7B010000 		.4byte	.LASF18
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 16
+
+
+ 757 035f 05       		.byte	0x5
+ 758 0360 1207     		.2byte	0x712
+ 759 0362 66030000 		.4byte	0x366
+ 760 0366 0E       		.uleb128 0xe
+ 761 0367 76000000 		.4byte	0x76
+ 762 036b 0F       		.uleb128 0xf
+ 763 036c 69000000 		.4byte	.LASF19
+ 764 0370 01       		.byte	0x1
+ 765 0371 10       		.byte	0x10
+ 766 0372 8D000000 		.4byte	0x8d
+ 767 0376 05       		.uleb128 0x5
+ 768 0377 03       		.byte	0x3
+ 769 0378 00000000 		.4byte	voltage_measured
+ 770 037c 10       		.uleb128 0x10
+ 771 037d 72706D00 		.ascii	"rpm\000"
+ 772 0381 01       		.byte	0x1
+ 773 0382 10       		.byte	0x10
+ 774 0383 8D000000 		.4byte	0x8d
+ 775 0387 05       		.uleb128 0x5
+ 776 0388 03       		.byte	0x3
+ 777 0389 00000000 		.4byte	rpm
+ 778 038d 0F       		.uleb128 0xf
+ 779 038e 73010000 		.4byte	.LASF20
+ 780 0392 01       		.byte	0x1
+ 781 0393 10       		.byte	0x10
+ 782 0394 8D000000 		.4byte	0x8d
+ 783 0398 05       		.uleb128 0x5
+ 784 0399 03       		.byte	0x3
+ 785 039a 00000000 		.4byte	voltage
+ 786 039e 0F       		.uleb128 0xf
+ 787 039f C2010000 		.4byte	.LASF21
+ 788 03a3 01       		.byte	0x1
+ 789 03a4 10       		.byte	0x10
+ 790 03a5 8D000000 		.4byte	0x8d
+ 791 03a9 05       		.uleb128 0x5
+ 792 03aa 03       		.byte	0x3
+ 793 03ab 00000000 		.4byte	back_emf
+ 794 03af 0F       		.uleb128 0xf
+ 795 03b0 A2020000 		.4byte	.LASF22
+ 796 03b4 01       		.byte	0x1
+ 797 03b5 10       		.byte	0x10
+ 798 03b6 8D000000 		.4byte	0x8d
+ 799 03ba 05       		.uleb128 0x5
+ 800 03bb 03       		.byte	0x3
+ 801 03bc 00000000 		.4byte	current_1
+ 802 03c0 0F       		.uleb128 0xf
+ 803 03c1 02020000 		.4byte	.LASF23
+ 804 03c5 01       		.byte	0x1
+ 805 03c6 11       		.byte	0x11
+ 806 03c7 99000000 		.4byte	0x99
+ 807 03cb 05       		.uleb128 0x5
+ 808 03cc 03       		.byte	0x3
+ 809 03cd 00000000 		.4byte	back_emf_in_volts
+ 810 03d1 0F       		.uleb128 0xf
+ 811 03d2 AC020000 		.4byte	.LASF24
+ 812 03d6 01       		.byte	0x1
+ 813 03d7 11       		.byte	0x11
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 17
+
+
+ 814 03d8 99000000 		.4byte	0x99
+ 815 03dc 05       		.uleb128 0x5
+ 816 03dd 03       		.byte	0x3
+ 817 03de 00000000 		.4byte	current
+ 818 03e2 11       		.uleb128 0x11
+ 819 03e3 55020000 		.4byte	.LASF25
+ 820 03e7 55020000 		.4byte	.LASF25
+ 821 03eb 06       		.byte	0x6
+ 822 03ec 26       		.byte	0x26
+ 823 03ed 11       		.uleb128 0x11
+ 824 03ee E5020000 		.4byte	.LASF26
+ 825 03f2 E5020000 		.4byte	.LASF26
+ 826 03f6 07       		.byte	0x7
+ 827 03f7 76       		.byte	0x76
+ 828 03f8 11       		.uleb128 0x11
+ 829 03f9 5C010000 		.4byte	.LASF27
+ 830 03fd 5C010000 		.4byte	.LASF27
+ 831 0401 08       		.byte	0x8
+ 832 0402 D1       		.byte	0xd1
+ 833 0403 11       		.uleb128 0x11
+ 834 0404 80000000 		.4byte	.LASF28
+ 835 0408 80000000 		.4byte	.LASF28
+ 836 040c 08       		.byte	0x8
+ 837 040d 39       		.byte	0x39
+ 838 040e 11       		.uleb128 0x11
+ 839 040f 25020000 		.4byte	.LASF29
+ 840 0413 25020000 		.4byte	.LASF29
+ 841 0417 08       		.byte	0x8
+ 842 0418 3B       		.byte	0x3b
+ 843 0419 11       		.uleb128 0x11
+ 844 041a 4F000000 		.4byte	.LASF30
+ 845 041e 4F000000 		.4byte	.LASF30
+ 846 0422 08       		.byte	0x8
+ 847 0423 3F       		.byte	0x3f
+ 848 0424 11       		.uleb128 0x11
+ 849 0425 0C000000 		.4byte	.LASF31
+ 850 0429 0C000000 		.4byte	.LASF31
+ 851 042d 09       		.byte	0x9
+ 852 042e 26       		.byte	0x26
+ 853 042f 11       		.uleb128 0x11
+ 854 0430 E2010000 		.4byte	.LASF32
+ 855 0434 E2010000 		.4byte	.LASF32
+ 856 0438 0A       		.byte	0xa
+ 857 0439 3D       		.byte	0x3d
+ 858 043a 11       		.uleb128 0x11
+ 859 043b 99010000 		.4byte	.LASF33
+ 860 043f 99010000 		.4byte	.LASF33
+ 861 0443 0A       		.byte	0xa
+ 862 0444 3C       		.byte	0x3c
+ 863 0445 11       		.uleb128 0x11
+ 864 0446 EF010000 		.4byte	.LASF34
+ 865 044a EF010000 		.4byte	.LASF34
+ 866 044e 0A       		.byte	0xa
+ 867 044f 61       		.byte	0x61
+ 868 0450 11       		.uleb128 0x11
+ 869 0451 D5020000 		.4byte	.LASF35
+ 870 0455 D5020000 		.4byte	.LASF35
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 18
+
+
+ 871 0459 08       		.byte	0x8
+ 872 045a 34       		.byte	0x34
+ 873 045b 11       		.uleb128 0x11
+ 874 045c 00000000 		.4byte	.LASF36
+ 875 0460 00000000 		.4byte	.LASF36
+ 876 0464 0B       		.byte	0xb
+ 877 0465 3E       		.byte	0x3e
+ 878 0466 11       		.uleb128 0x11
+ 879 0467 28000000 		.4byte	.LASF37
+ 880 046b 28000000 		.4byte	.LASF37
+ 881 046f 0A       		.byte	0xa
+ 882 0470 38       		.byte	0x38
+ 883 0471 11       		.uleb128 0x11
+ 884 0472 17000000 		.4byte	.LASF38
+ 885 0476 17000000 		.4byte	.LASF38
+ 886 047a 0A       		.byte	0xa
+ 887 047b 3A       		.byte	0x3a
+ 888 047c 00       		.byte	0
+ 889              		.section	.debug_abbrev,"",%progbits
+ 890              	.Ldebug_abbrev0:
+ 891 0000 01       		.uleb128 0x1
+ 892 0001 11       		.uleb128 0x11
+ 893 0002 01       		.byte	0x1
+ 894 0003 25       		.uleb128 0x25
+ 895 0004 0E       		.uleb128 0xe
+ 896 0005 13       		.uleb128 0x13
+ 897 0006 0B       		.uleb128 0xb
+ 898 0007 03       		.uleb128 0x3
+ 899 0008 0E       		.uleb128 0xe
+ 900 0009 1B       		.uleb128 0x1b
+ 901 000a 0E       		.uleb128 0xe
+ 902 000b 55       		.uleb128 0x55
+ 903 000c 17       		.uleb128 0x17
+ 904 000d 11       		.uleb128 0x11
+ 905 000e 01       		.uleb128 0x1
+ 906 000f 10       		.uleb128 0x10
+ 907 0010 17       		.uleb128 0x17
+ 908 0011 00       		.byte	0
+ 909 0012 00       		.byte	0
+ 910 0013 02       		.uleb128 0x2
+ 911 0014 24       		.uleb128 0x24
+ 912 0015 00       		.byte	0
+ 913 0016 0B       		.uleb128 0xb
+ 914 0017 0B       		.uleb128 0xb
+ 915 0018 3E       		.uleb128 0x3e
+ 916 0019 0B       		.uleb128 0xb
+ 917 001a 03       		.uleb128 0x3
+ 918 001b 0E       		.uleb128 0xe
+ 919 001c 00       		.byte	0
+ 920 001d 00       		.byte	0
+ 921 001e 03       		.uleb128 0x3
+ 922 001f 16       		.uleb128 0x16
+ 923 0020 00       		.byte	0
+ 924 0021 03       		.uleb128 0x3
+ 925 0022 0E       		.uleb128 0xe
+ 926 0023 3A       		.uleb128 0x3a
+ 927 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 19
+
+
+ 928 0025 3B       		.uleb128 0x3b
+ 929 0026 0B       		.uleb128 0xb
+ 930 0027 49       		.uleb128 0x49
+ 931 0028 13       		.uleb128 0x13
+ 932 0029 00       		.byte	0
+ 933 002a 00       		.byte	0
+ 934 002b 04       		.uleb128 0x4
+ 935 002c 24       		.uleb128 0x24
+ 936 002d 00       		.byte	0
+ 937 002e 0B       		.uleb128 0xb
+ 938 002f 0B       		.uleb128 0xb
+ 939 0030 3E       		.uleb128 0x3e
+ 940 0031 0B       		.uleb128 0xb
+ 941 0032 03       		.uleb128 0x3
+ 942 0033 08       		.uleb128 0x8
+ 943 0034 00       		.byte	0
+ 944 0035 00       		.byte	0
+ 945 0036 05       		.uleb128 0x5
+ 946 0037 16       		.uleb128 0x16
+ 947 0038 00       		.byte	0
+ 948 0039 03       		.uleb128 0x3
+ 949 003a 0E       		.uleb128 0xe
+ 950 003b 3A       		.uleb128 0x3a
+ 951 003c 0B       		.uleb128 0xb
+ 952 003d 3B       		.uleb128 0x3b
+ 953 003e 05       		.uleb128 0x5
+ 954 003f 49       		.uleb128 0x49
+ 955 0040 13       		.uleb128 0x13
+ 956 0041 00       		.byte	0
+ 957 0042 00       		.byte	0
+ 958 0043 06       		.uleb128 0x6
+ 959 0044 2E       		.uleb128 0x2e
+ 960 0045 01       		.byte	0x1
+ 961 0046 3F       		.uleb128 0x3f
+ 962 0047 19       		.uleb128 0x19
+ 963 0048 03       		.uleb128 0x3
+ 964 0049 0E       		.uleb128 0xe
+ 965 004a 3A       		.uleb128 0x3a
+ 966 004b 0B       		.uleb128 0xb
+ 967 004c 3B       		.uleb128 0x3b
+ 968 004d 0B       		.uleb128 0xb
+ 969 004e 27       		.uleb128 0x27
+ 970 004f 19       		.uleb128 0x19
+ 971 0050 49       		.uleb128 0x49
+ 972 0051 13       		.uleb128 0x13
+ 973 0052 8701     		.uleb128 0x87
+ 974 0054 19       		.uleb128 0x19
+ 975 0055 11       		.uleb128 0x11
+ 976 0056 01       		.uleb128 0x1
+ 977 0057 12       		.uleb128 0x12
+ 978 0058 06       		.uleb128 0x6
+ 979 0059 40       		.uleb128 0x40
+ 980 005a 18       		.uleb128 0x18
+ 981 005b 9642     		.uleb128 0x2116
+ 982 005d 19       		.uleb128 0x19
+ 983 005e 01       		.uleb128 0x1
+ 984 005f 13       		.uleb128 0x13
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 20
+
+
+ 985 0060 00       		.byte	0
+ 986 0061 00       		.byte	0
+ 987 0062 07       		.uleb128 0x7
+ 988 0063 0B       		.uleb128 0xb
+ 989 0064 01       		.byte	0x1
+ 990 0065 11       		.uleb128 0x11
+ 991 0066 01       		.uleb128 0x1
+ 992 0067 12       		.uleb128 0x12
+ 993 0068 06       		.uleb128 0x6
+ 994 0069 01       		.uleb128 0x1
+ 995 006a 13       		.uleb128 0x13
+ 996 006b 00       		.byte	0
+ 997 006c 00       		.byte	0
+ 998 006d 08       		.uleb128 0x8
+ 999 006e 34       		.uleb128 0x34
+ 1000 006f 00       		.byte	0
+ 1001 0070 03       		.uleb128 0x3
+ 1002 0071 0E       		.uleb128 0xe
+ 1003 0072 3A       		.uleb128 0x3a
+ 1004 0073 0B       		.uleb128 0xb
+ 1005 0074 3B       		.uleb128 0x3b
+ 1006 0075 0B       		.uleb128 0xb
+ 1007 0076 49       		.uleb128 0x49
+ 1008 0077 13       		.uleb128 0x13
+ 1009 0078 00       		.byte	0
+ 1010 0079 00       		.byte	0
+ 1011 007a 09       		.uleb128 0x9
+ 1012 007b 898201   		.uleb128 0x4109
+ 1013 007e 01       		.byte	0x1
+ 1014 007f 11       		.uleb128 0x11
+ 1015 0080 01       		.uleb128 0x1
+ 1016 0081 31       		.uleb128 0x31
+ 1017 0082 13       		.uleb128 0x13
+ 1018 0083 01       		.uleb128 0x1
+ 1019 0084 13       		.uleb128 0x13
+ 1020 0085 00       		.byte	0
+ 1021 0086 00       		.byte	0
+ 1022 0087 0A       		.uleb128 0xa
+ 1023 0088 8A8201   		.uleb128 0x410a
+ 1024 008b 00       		.byte	0
+ 1025 008c 02       		.uleb128 0x2
+ 1026 008d 18       		.uleb128 0x18
+ 1027 008e 9142     		.uleb128 0x2111
+ 1028 0090 18       		.uleb128 0x18
+ 1029 0091 00       		.byte	0
+ 1030 0092 00       		.byte	0
+ 1031 0093 0B       		.uleb128 0xb
+ 1032 0094 898201   		.uleb128 0x4109
+ 1033 0097 00       		.byte	0
+ 1034 0098 11       		.uleb128 0x11
+ 1035 0099 01       		.uleb128 0x1
+ 1036 009a 31       		.uleb128 0x31
+ 1037 009b 13       		.uleb128 0x13
+ 1038 009c 00       		.byte	0
+ 1039 009d 00       		.byte	0
+ 1040 009e 0C       		.uleb128 0xc
+ 1041 009f 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 21
+
+
+ 1042 00a2 01       		.byte	0x1
+ 1043 00a3 11       		.uleb128 0x11
+ 1044 00a4 01       		.uleb128 0x1
+ 1045 00a5 31       		.uleb128 0x31
+ 1046 00a6 13       		.uleb128 0x13
+ 1047 00a7 00       		.byte	0
+ 1048 00a8 00       		.byte	0
+ 1049 00a9 0D       		.uleb128 0xd
+ 1050 00aa 34       		.uleb128 0x34
+ 1051 00ab 00       		.byte	0
+ 1052 00ac 03       		.uleb128 0x3
+ 1053 00ad 0E       		.uleb128 0xe
+ 1054 00ae 3A       		.uleb128 0x3a
+ 1055 00af 0B       		.uleb128 0xb
+ 1056 00b0 3B       		.uleb128 0x3b
+ 1057 00b1 05       		.uleb128 0x5
+ 1058 00b2 49       		.uleb128 0x49
+ 1059 00b3 13       		.uleb128 0x13
+ 1060 00b4 3F       		.uleb128 0x3f
+ 1061 00b5 19       		.uleb128 0x19
+ 1062 00b6 3C       		.uleb128 0x3c
+ 1063 00b7 19       		.uleb128 0x19
+ 1064 00b8 00       		.byte	0
+ 1065 00b9 00       		.byte	0
+ 1066 00ba 0E       		.uleb128 0xe
+ 1067 00bb 35       		.uleb128 0x35
+ 1068 00bc 00       		.byte	0
+ 1069 00bd 49       		.uleb128 0x49
+ 1070 00be 13       		.uleb128 0x13
+ 1071 00bf 00       		.byte	0
+ 1072 00c0 00       		.byte	0
+ 1073 00c1 0F       		.uleb128 0xf
+ 1074 00c2 34       		.uleb128 0x34
+ 1075 00c3 00       		.byte	0
+ 1076 00c4 03       		.uleb128 0x3
+ 1077 00c5 0E       		.uleb128 0xe
+ 1078 00c6 3A       		.uleb128 0x3a
+ 1079 00c7 0B       		.uleb128 0xb
+ 1080 00c8 3B       		.uleb128 0x3b
+ 1081 00c9 0B       		.uleb128 0xb
+ 1082 00ca 49       		.uleb128 0x49
+ 1083 00cb 13       		.uleb128 0x13
+ 1084 00cc 3F       		.uleb128 0x3f
+ 1085 00cd 19       		.uleb128 0x19
+ 1086 00ce 02       		.uleb128 0x2
+ 1087 00cf 18       		.uleb128 0x18
+ 1088 00d0 00       		.byte	0
+ 1089 00d1 00       		.byte	0
+ 1090 00d2 10       		.uleb128 0x10
+ 1091 00d3 34       		.uleb128 0x34
+ 1092 00d4 00       		.byte	0
+ 1093 00d5 03       		.uleb128 0x3
+ 1094 00d6 08       		.uleb128 0x8
+ 1095 00d7 3A       		.uleb128 0x3a
+ 1096 00d8 0B       		.uleb128 0xb
+ 1097 00d9 3B       		.uleb128 0x3b
+ 1098 00da 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 22
+
+
+ 1099 00db 49       		.uleb128 0x49
+ 1100 00dc 13       		.uleb128 0x13
+ 1101 00dd 3F       		.uleb128 0x3f
+ 1102 00de 19       		.uleb128 0x19
+ 1103 00df 02       		.uleb128 0x2
+ 1104 00e0 18       		.uleb128 0x18
+ 1105 00e1 00       		.byte	0
+ 1106 00e2 00       		.byte	0
+ 1107 00e3 11       		.uleb128 0x11
+ 1108 00e4 2E       		.uleb128 0x2e
+ 1109 00e5 00       		.byte	0
+ 1110 00e6 3F       		.uleb128 0x3f
+ 1111 00e7 19       		.uleb128 0x19
+ 1112 00e8 3C       		.uleb128 0x3c
+ 1113 00e9 19       		.uleb128 0x19
+ 1114 00ea 6E       		.uleb128 0x6e
+ 1115 00eb 0E       		.uleb128 0xe
+ 1116 00ec 03       		.uleb128 0x3
+ 1117 00ed 0E       		.uleb128 0xe
+ 1118 00ee 3A       		.uleb128 0x3a
+ 1119 00ef 0B       		.uleb128 0xb
+ 1120 00f0 3B       		.uleb128 0x3b
+ 1121 00f1 0B       		.uleb128 0xb
+ 1122 00f2 00       		.byte	0
+ 1123 00f3 00       		.byte	0
+ 1124 00f4 00       		.byte	0
+ 1125              		.section	.debug_aranges,"",%progbits
+ 1126 0000 1C000000 		.4byte	0x1c
+ 1127 0004 0200     		.2byte	0x2
+ 1128 0006 00000000 		.4byte	.Ldebug_info0
+ 1129 000a 04       		.byte	0x4
+ 1130 000b 00       		.byte	0
+ 1131 000c 0000     		.2byte	0
+ 1132 000e 0000     		.2byte	0
+ 1133 0010 00000000 		.4byte	.LFB63
+ 1134 0014 A4010000 		.4byte	.LFE63-.LFB63
+ 1135 0018 00000000 		.4byte	0
+ 1136 001c 00000000 		.4byte	0
+ 1137              		.section	.debug_ranges,"",%progbits
+ 1138              	.Ldebug_ranges0:
+ 1139 0000 00000000 		.4byte	.LFB63
+ 1140 0004 A4010000 		.4byte	.LFE63
+ 1141 0008 00000000 		.4byte	0
+ 1142 000c 00000000 		.4byte	0
+ 1143              		.section	.debug_line,"",%progbits
+ 1144              	.Ldebug_line0:
+ 1145 0000 50020000 		.section	.debug_str,"MS",%progbits,1
+ 1145      02008E01 
+ 1145      00000201 
+ 1145      FB0E0D00 
+ 1145      01010101 
+ 1146              	.LASF36:
+ 1147 0000 5047415F 		.ascii	"PGA_1_Start\000"
+ 1147      315F5374 
+ 1147      61727400 
+ 1148              	.LASF31:
+ 1149 000c 50335F36 		.ascii	"P3_6_Write\000"
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 23
+
+
+ 1149      5F577269 
+ 1149      746500
+ 1150              	.LASF38:
+ 1151 0017 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 1151      57726974 
+ 1151      65436F6E 
+ 1151      74726F6C 
+ 1151      00
+ 1152              	.LASF37:
+ 1153 0028 4C43445F 		.ascii	"LCD_Start\000"
+ 1153      53746172 
+ 1153      7400
+ 1154              	.LASF9:
+ 1155 0032 5F5F696E 		.ascii	"__int32_t\000"
+ 1155      7433325F 
+ 1155      7400
+ 1156              	.LASF3:
+ 1157 003c 73686F72 		.ascii	"short unsigned int\000"
+ 1157      7420756E 
+ 1157      7369676E 
+ 1157      65642069 
+ 1157      6E7400
+ 1158              	.LASF30:
+ 1159 004f 4144435F 		.ascii	"ADC_SAR_1_CountsTo_mVolts\000"
+ 1159      5341525F 
+ 1159      315F436F 
+ 1159      756E7473 
+ 1159      546F5F6D 
+ 1160              	.LASF19:
+ 1161 0069 766F6C74 		.ascii	"voltage_measured\000"
+ 1161      6167655F 
+ 1161      6D656173 
+ 1161      75726564 
+ 1161      00
+ 1162              	.LASF13:
+ 1163 007a 666C6F61 		.ascii	"float\000"
+ 1163      7400
+ 1164              	.LASF28:
+ 1165 0080 4144435F 		.ascii	"ADC_SAR_1_IsEndConversion\000"
+ 1165      5341525F 
+ 1165      315F4973 
+ 1165      456E6443 
+ 1165      6F6E7665 
+ 1166              	.LASF1:
+ 1167 009a 756E7369 		.ascii	"unsigned char\000"
+ 1167      676E6564 
+ 1167      20636861 
+ 1167      7200
+ 1168              	.LASF39:
+ 1169 00a8 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1169      43313120 
+ 1169      352E342E 
+ 1169      31203230 
+ 1169      31363036 
+ 1170 00db 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1170      20726576 
+ 1170      6973696F 
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 24
+
+
+ 1170      6E203233 
+ 1170      37373135 
+ 1171 010e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1171      66756E63 
+ 1171      74696F6E 
+ 1171      2D736563 
+ 1171      74696F6E 
+ 1172              	.LASF43:
+ 1173 0136 766F6C74 		.ascii	"voltage_motor\000"
+ 1173      6167655F 
+ 1173      6D6F746F 
+ 1173      7200
+ 1174              	.LASF12:
+ 1175 0144 696E7431 		.ascii	"int16\000"
+ 1175      3600
+ 1176              	.LASF5:
+ 1177 014a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1177      20756E73 
+ 1177      69676E65 
+ 1177      6420696E 
+ 1177      7400
+ 1178              	.LASF27:
+ 1179 015c 4144435F 		.ascii	"ADC_SAR_1_StartConvert\000"
+ 1179      5341525F 
+ 1179      315F5374 
+ 1179      61727443 
+ 1179      6F6E7665 
+ 1180              	.LASF20:
+ 1181 0173 766F6C74 		.ascii	"voltage\000"
+ 1181      61676500 
+ 1182              	.LASF18:
+ 1183 017b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1183      52784275 
+ 1183      66666572 
+ 1183      00
+ 1184              	.LASF14:
+ 1185 0188 646F7562 		.ascii	"double\000"
+ 1185      6C6500
+ 1186              	.LASF2:
+ 1187 018f 73686F72 		.ascii	"short int\000"
+ 1187      7420696E 
+ 1187      7400
+ 1188              	.LASF33:
+ 1189 0199 4C43445F 		.ascii	"LCD_PrintString\000"
+ 1189      5072696E 
+ 1189      74537472 
+ 1189      696E6700 
+ 1190              	.LASF11:
+ 1191 01a9 75696E74 		.ascii	"uint16\000"
+ 1191      313600
+ 1192              	.LASF42:
+ 1193 01b0 6D61696E 		.ascii	"main\000"
+ 1193      00
+ 1194              	.LASF8:
+ 1195 01b5 756E7369 		.ascii	"unsigned int\000"
+ 1195      676E6564 
+ 1195      20696E74 
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 25
+
+
+ 1195      00
+ 1196              	.LASF21:
+ 1197 01c2 6261636B 		.ascii	"back_emf\000"
+ 1197      5F656D66 
+ 1197      00
+ 1198              	.LASF7:
+ 1199 01cb 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1199      206C6F6E 
+ 1199      6720756E 
+ 1199      7369676E 
+ 1199      65642069 
+ 1200              	.LASF32:
+ 1201 01e2 4C43445F 		.ascii	"LCD_Position\000"
+ 1201      506F7369 
+ 1201      74696F6E 
+ 1201      00
+ 1202              	.LASF34:
+ 1203 01ef 4C43445F 		.ascii	"LCD_PrintU32Number\000"
+ 1203      5072696E 
+ 1203      74553332 
+ 1203      4E756D62 
+ 1203      657200
+ 1204              	.LASF23:
+ 1205 0202 6261636B 		.ascii	"back_emf_in_volts\000"
+ 1205      5F656D66 
+ 1205      5F696E5F 
+ 1205      766F6C74 
+ 1205      7300
+ 1206              	.LASF10:
+ 1207 0214 696E7433 		.ascii	"int32_t\000"
+ 1207      325F7400 
+ 1208              	.LASF17:
+ 1209 021c 73697A65 		.ascii	"sizetype\000"
+ 1209      74797065 
+ 1209      00
+ 1210              	.LASF29:
+ 1211 0225 4144435F 		.ascii	"ADC_SAR_1_GetResult16\000"
+ 1211      5341525F 
+ 1211      315F4765 
+ 1211      74526573 
+ 1211      756C7431 
+ 1212              	.LASF6:
+ 1213 023b 6C6F6E67 		.ascii	"long long int\000"
+ 1213      206C6F6E 
+ 1213      6720696E 
+ 1213      7400
+ 1214              	.LASF40:
+ 1215 0249 6D61696E 		.ascii	"main.c\000"
+ 1215      2E6300
+ 1216              	.LASF15:
+ 1217 0250 63686172 		.ascii	"char\000"
+ 1217      00
+ 1218              	.LASF25:
+ 1219 0255 50335F35 		.ascii	"P3_5_Write\000"
+ 1219      5F577269 
+ 1219      746500
+ 1220              	.LASF41:
+ARM GAS  C:\Users\SWAPNIL\AppData\Local\Temp\ccj1z5xe.s 			page 26
+
+
+ 1221 0260 433A5C55 		.ascii	"C:\\Users\\SWAPNIL\\Documents\\PSoC Creator\\Worksp"
+ 1221      73657273 
+ 1221      5C535741 
+ 1221      504E494C 
+ 1221      5C446F63 
+ 1222 028e 61636530 		.ascii	"ace02\\Lab -02.cydsn\000"
+ 1222      325C4C61 
+ 1222      62202D30 
+ 1222      322E6379 
+ 1222      64736E00 
+ 1223              	.LASF22:
+ 1224 02a2 63757272 		.ascii	"current_1\000"
+ 1224      656E745F 
+ 1224      3100
+ 1225              	.LASF24:
+ 1226 02ac 63757272 		.ascii	"current\000"
+ 1226      656E7400 
+ 1227              	.LASF4:
+ 1228 02b4 6C6F6E67 		.ascii	"long int\000"
+ 1228      20696E74 
+ 1228      00
+ 1229              	.LASF16:
+ 1230 02bd 6C6F6E67 		.ascii	"long double\000"
+ 1230      20646F75 
+ 1230      626C6500 
+ 1231              	.LASF0:
+ 1232 02c9 7369676E 		.ascii	"signed char\000"
+ 1232      65642063 
+ 1232      68617200 
+ 1233              	.LASF35:
+ 1234 02d5 4144435F 		.ascii	"ADC_SAR_1_Start\000"
+ 1234      5341525F 
+ 1234      315F5374 
+ 1234      61727400 
+ 1235              	.LASF26:
+ 1236 02e5 43794465 		.ascii	"CyDelay\000"
+ 1236      6C617900 
+ 1237              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

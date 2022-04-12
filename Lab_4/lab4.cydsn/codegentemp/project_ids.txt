@@ -1,0 +1,7 @@
+C:\Users\SWAPNIL\Documents\PSoC Creator\Lab4\lab4.cydsn\lab4.cyprj|908293b6-9c8e-4c72-91f6-99e67a0eec80
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|6d234a4c-41d5-4875-a650-37034b3a6fee
+C:\Users\SWAPNIL\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|438b4a0f-b73a-4894-b764-1a92e789b14f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b4f180e4-5e3d-4153-8fb7-6d56caf1f685
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b8228c08-6477-4e65-be82-f096e4fc6986
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|f55273cb-1aef-4ba6-aa0e-9e7744759235
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc3\AnalogDevice\PSoC35AnalogDevice.cylib\PSoC35AnalogDevice.cyprj|ec74fd3d-53cd-40a3-86d2-0803dfc6f98d
